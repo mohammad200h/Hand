@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+package.xml
+setup.cfg
+setup.py
+tiny_tf/__init__.py
+tiny_tf/test.py
+tiny_tf/tf.py
+tiny_tf/transformations.py
+tiny_tf.egg-info/PKG-INFO
+tiny_tf.egg-info/SOURCES.txt
+tiny_tf.egg-info/dependency_links.txt
+tiny_tf.egg-info/requires.txt
+tiny_tf.egg-info/top_level.txt

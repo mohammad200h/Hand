@@ -1,0 +1,6 @@
+setup.py
+hand_multiprocessing.egg-info/PKG-INFO
+hand_multiprocessing.egg-info/SOURCES.txt
+hand_multiprocessing.egg-info/dependency_links.txt
+hand_multiprocessing.egg-info/requires.txt
+hand_multiprocessing.egg-info/top_level.txt

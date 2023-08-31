@@ -1,0 +1,6 @@
+setup.py
+fingers.egg-info/PKG-INFO
+fingers.egg-info/SOURCES.txt
+fingers.egg-info/dependency_links.txt
+fingers.egg-info/requires.txt
+fingers.egg-info/top_level.txt

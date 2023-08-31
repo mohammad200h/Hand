@@ -1,0 +1,1663 @@
+pybullet build time: May 20 2022 19:44:17
+b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it./usr/lib/python3/dist-packages/pkg_resources/__init__.py:1145: DeprecationWarning: Use of .. or absolute path in a resource path is not allowed and will raise exceptions in a future release.
+  return get_provider(package_or_requirement).get_resource_filename(
+/usr/local/lib/python3.8/dist-packages/gym/spaces/box.py:128: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(f"Box bound precision lowered by casting to {self.dtype}")
+/usr/local/lib/python3.8/dist-packages/gym/core.py:317: DeprecationWarning: [33mWARN: Initializing wrapper in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future.[0m
+  deprecation(
+/usr/local/lib/python3.8/dist-packages/gym/wrappers/step_api_compatibility.py:39: DeprecationWarning: [33mWARN: Initializing environment in old step API which returns one bool instead of two. It is recommended to set `new_step_api=True` to use new step API. This will be the default behaviour in future.[0m
+  deprecation(
+.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it..b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it..b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.
+
+test_AW::current_dir=/home/mamad/FingersFamily/fingers_multiprocessing/fingers_multiprocessing/envs/unitTest
+
+
+current_dir=/home/mamad/FingersFamily/fingers_multiprocessing/fingers_multiprocessing/envs
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.028667932455359372, 0.09691101905069259, 0.2903707307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.006667932455359361, 0.09944701905069253, 0.2934387307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [0.015332067544640641, 0.09691101905069262, 0.2903707307746705]
+Intializing action
+self.ws_max,self.ws_min::  [-0.009296185329460542, 0.09691101905069259, 0.3072372982722349] [-0.05670381467053947, -0.02881099505230264, 0.21541076772815337]
+fingertips_xyz::FF::  (-0.03300000000000001, 0.09706000000000004, 0.29039699999999996)
+initial_fingertips_goal::FF::  [-0.028667932455359372, 0.09691101905069259, 0.2903707307746705]
+fingertips_xyz::MF::  (-0.011000000000000005, 0.09959599999999999, 0.293465)
+initial_fingertips_goal::MF::  [-0.006667932455359361, 0.09944701905069253, 0.2934387307746705]
+fingertips_xyz::RF::  (0.010999999999999998, 0.09706000000000004, 0.29039699999999996)
+initial_fingertips_goal::RF::  [0.015332067544640641, 0.09691101905069262, 0.2903707307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.028667932455359372, 0.09691101905069259, 0.2903707307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.006667932455359361, 0.09944701905069253, 0.2934387307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [0.015332067544640641, 0.09691101905069262, 0.2903707307746705]
+Intializing action
+self.ws_max,self.ws_min::  [-0.009296185329460542, 0.09691101905069259, 0.3072372982722349] [-0.05670381467053947, -0.02881099505230264, 0.21541076772815337]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.028667932455359372, 0.09691101905069259, 0.2903707307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.006667932455359361, 0.09944701905069253, 0.2934387307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [0.015332067544640641, 0.09691101905069262, 0.2903707307746705]
+Intializing action
+self.ws_max,self.ws_min::  [-0.009296185329460542, 0.09691101905069259, 0.3072372982722349] [-0.05670381467053947, -0.02881099505230264, 0.21541076772815337]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.028667932455359372, 0.09691101905069259, 0.2903707307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.006667932455359361, 0.09944701905069253, 0.2934387307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [0.015332067544640641, 0.09691101905069262, 0.2903707307746705]
+Intializing action
+self.ws_max,self.ws_min::  [-0.009296185329460542, 0.09691101905069259, 0.3072372982722349] [-0.05670381467053947, -0.02881099505230264, 0.21541076772815337]
+test_remove_goal::current_success_counter::  1
+test_remove_goal::env.random_start.ATP.success_counter[FF]:: 1
+test_remove_goal::current_success_counter::  2
+test_remove_goal::env.random_start.ATP.success_counter[FF]:: 2
+test_remove_goal::current_success_counter::  3
+test_remove_goal::env.random_start.ATP.success_counter[FF]:: 3
+test_remove_goal::current_success_counter::  4
+test_remove_goal::env.random_start.ATP.success_counter[FF]:: 4
+test_remove_goal::current_success_counter::  5
+test_remove_goal::env.random_start.ATP.success_counter[FF]:: 5
+
+
+
+test_remove_goal::indexs::  []
+
+
+
+test_remove_goal::num_goals::  1294
+test_remove_goal::num_goals::  1293
+test_remove_goal::num_goals::  1292
+test_remove_goal::num_goals::  1291
+test_remove_goal::num_goals::  1290
+test_remove_goal::num_goals::  1289
+test_remove_goal::num_goals::  1288
+test_remove_goal::num_goals::  1287
+test_remove_goal::num_goals::  1286
+test_remove_goal::num_goals::  1285
+test_remove_goal::num_goals::  1284
+test_remove_goal::num_goals::  1283
+test_remove_goal::num_goals::  1282
+test_remove_goal::num_goals::  1281
+test_remove_goal::num_goals::  1280
+test_remove_goal::num_goals::  1279
+test_remove_goal::num_goals::  1278
+test_remove_goal::num_goals::  1277
+test_remove_goal::num_goals::  1276
+test_remove_goal::num_goals::  1275
+test_remove_goal::num_goals::  1274
+test_remove_goal::num_goals::  1273
+test_remove_goal::num_goals::  1272
+test_remove_goal::num_goals::  1271
+test_remove_goal::num_goals::  1270
+test_remove_goal::num_goals::  1269
+test_remove_goal::num_goals::  1268
+test_remove_goal::num_goals::  1267
+test_remove_goal::num_goals::  1266
+test_remove_goal::num_goals::  1265
+test_remove_goal::num_goals::  1264
+test_remove_goal::num_goals::  1263
+test_remove_goal::num_goals::  1262
+test_remove_goal::num_goals::  1261
+test_remove_goal::num_goals::  1260
+test_remove_goal::num_goals::  1259
+test_remove_goal::num_goals::  1258
+test_remove_goal::num_goals::  1257
+test_remove_goal::num_goals::  1256
+test_remove_goal::num_goals::  1255
+test_remove_goal::num_goals::  1254
+test_remove_goal::num_goals::  1253
+test_remove_goal::num_goals::  1252
+test_remove_goal::num_goals::  1251
+test_remove_goal::num_goals::  1250
+test_remove_goal::num_goals::  1249
+test_remove_goal::num_goals::  1248
+test_remove_goal::num_goals::  1247
+test_remove_goal::num_goals::  1246
+test_remove_goal::num_goals::  1245
+test_remove_goal::num_goals::  1244
+test_remove_goal::num_goals::  1243
+test_remove_goal::num_goals::  1242
+test_remove_goal::num_goals::  1241
+test_remove_goal::num_goals::  1240
+test_remove_goal::num_goals::  1239
+test_remove_goal::num_goals::  1238
+test_remove_goal::num_goals::  1237
+test_remove_goal::num_goals::  1236
+test_remove_goal::num_goals::  1235
+test_remove_goal::num_goals::  1234
+test_remove_goal::num_goals::  1233
+test_remove_goal::num_goals::  1232
+test_remove_goal::num_goals::  1231
+test_remove_goal::num_goals::  1230
+test_remove_goal::num_goals::  1229
+test_remove_goal::num_goals::  1228
+test_remove_goal::num_goals::  1227
+test_remove_goal::num_goals::  1226
+test_remove_goal::num_goals::  1225
+test_remove_goal::num_goals::  1224
+test_remove_goal::num_goals::  1223
+test_remove_goal::num_goals::  1222
+test_remove_goal::num_goals::  1221
+test_remove_goal::num_goals::  1220
+test_remove_goal::num_goals::  1219
+test_remove_goal::num_goals::  1218
+test_remove_goal::num_goals::  1217
+test_remove_goal::num_goals::  1216
+test_remove_goal::num_goals::  1215
+test_remove_goal::num_goals::  1214
+test_remove_goal::num_goals::  1213
+test_remove_goal::num_goals::  1212
+test_remove_goal::num_goals::  1211
+test_remove_goal::num_goals::  1210
+test_remove_goal::num_goals::  1209
+test_remove_goal::num_goals::  1208
+test_remove_goal::num_goals::  1207
+test_remove_goal::num_goals::  1206
+test_remove_goal::num_goals::  1205
+test_remove_goal::num_goals::  1204
+test_remove_goal::num_goals::  1203
+test_remove_goal::num_goals::  1202
+test_remove_goal::num_goals::  1201
+test_remove_goal::num_goals::  1200
+test_remove_goal::num_goals::  1199
+test_remove_goal::num_goals::  1198
+test_remove_goal::num_goals::  1197
+test_remove_goal::num_goals::  1196
+test_remove_goal::num_goals::  1195
+test_remove_goal::num_goals::  1194
+test_remove_goal::num_goals::  1193
+test_remove_goal::num_goals::  1192
+test_remove_goal::num_goals::  1191
+test_remove_goal::num_goals::  1190
+test_remove_goal::num_goals::  1189
+test_remove_goal::num_goals::  1188
+test_remove_goal::num_goals::  1187
+test_remove_goal::num_goals::  1186
+test_remove_goal::num_goals::  1185
+test_remove_goal::num_goals::  1184
+test_remove_goal::num_goals::  1183
+test_remove_goal::num_goals::  1182
+test_remove_goal::num_goals::  1181
+test_remove_goal::num_goals::  1180
+test_remove_goal::num_goals::  1179
+test_remove_goal::num_goals::  1178
+test_remove_goal::num_goals::  1177
+test_remove_goal::num_goals::  1176
+test_remove_goal::num_goals::  1175
+test_remove_goal::num_goals::  1174
+test_remove_goal::num_goals::  1173
+test_remove_goal::num_goals::  1172
+test_remove_goal::num_goals::  1171
+test_remove_goal::num_goals::  1170
+test_remove_goal::num_goals::  1169
+test_remove_goal::num_goals::  1168
+test_remove_goal::num_goals::  1167
+test_remove_goal::num_goals::  1166
+test_remove_goal::num_goals::  1165
+test_remove_goal::num_goals::  1164
+test_remove_goal::num_goals::  1163
+test_remove_goal::num_goals::  1162
+test_remove_goal::num_goals::  1161
+test_remove_goal::num_goals::  1160
+test_remove_goal::num_goals::  1159
+test_remove_goal::num_goals::  1158
+test_remove_goal::num_goals::  1157
+test_remove_goal::num_goals::  1156
+test_remove_goal::num_goals::  1155
+test_remove_goal::num_goals::  1154
+test_remove_goal::num_goals::  1153
+test_remove_goal::num_goals::  1152
+test_remove_goal::num_goals::  1151
+test_remove_goal::num_goals::  1150
+test_remove_goal::num_goals::  1149
+test_remove_goal::num_goals::  1148
+test_remove_goal::num_goals::  1147
+test_remove_goal::num_goals::  1146
+test_remove_goal::num_goals::  1145
+test_remove_goal::num_goals::  1144
+test_remove_goal::num_goals::  1143
+test_remove_goal::num_goals::  1142
+test_remove_goal::num_goals::  1141
+test_remove_goal::num_goals::  1140
+test_remove_goal::num_goals::  1139
+test_remove_goal::num_goals::  1138
+test_remove_goal::num_goals::  1137
+test_remove_goal::num_goals::  1136
+test_remove_goal::num_goals::  1135
+test_remove_goal::num_goals::  1134
+test_remove_goal::num_goals::  1133
+test_remove_goal::num_goals::  1132
+test_remove_goal::num_goals::  1131
+test_remove_goal::num_goals::  1130
+test_remove_goal::num_goals::  1129
+test_remove_goal::num_goals::  1128
+test_remove_goal::num_goals::  1127
+test_remove_goal::num_goals::  1126
+test_remove_goal::num_goals::  1125
+test_remove_goal::num_goals::  1124
+test_remove_goal::num_goals::  1123
+test_remove_goal::num_goals::  1122
+test_remove_goal::num_goals::  1121
+test_remove_goal::num_goals::  1120
+test_remove_goal::num_goals::  1119
+test_remove_goal::num_goals::  1118
+test_remove_goal::num_goals::  1117
+test_remove_goal::num_goals::  1116
+test_remove_goal::num_goals::  1115
+test_remove_goal::num_goals::  1114
+test_remove_goal::num_goals::  1113
+test_remove_goal::num_goals::  1112
+test_remove_goal::num_goals::  1111
+test_remove_goal::num_goals::  1110
+test_remove_goal::num_goals::  1109
+test_remove_goal::num_goals::  1108
+test_remove_goal::num_goals::  1107
+test_remove_goal::num_goals::  1106
+test_remove_goal::num_goals::  1105
+test_remove_goal::num_goals::  1104
+test_remove_goal::num_goals::  1103
+test_remove_goal::num_goals::  1102
+test_remove_goal::num_goals::  1101
+test_remove_goal::num_goals::  1100
+test_remove_goal::num_goals::  1099
+test_remove_goal::num_goals::  1098
+test_remove_goal::num_goals::  1097
+test_remove_goal::num_goals::  1096
+test_remove_goal::num_goals::  1095
+test_remove_goal::num_goals::  1094
+test_remove_goal::num_goals::  1093
+test_remove_goal::num_goals::  1092
+test_remove_goal::num_goals::  1091
+test_remove_goal::num_goals::  1090
+test_remove_goal::num_goals::  1089
+test_remove_goal::num_goals::  1088
+test_remove_goal::num_goals::  1087
+test_remove_goal::num_goals::  1086
+test_remove_goal::num_goals::  1085
+test_remove_goal::num_goals::  1084
+test_remove_goal::num_goals::  1083
+test_remove_goal::num_goals::  1082
+test_remove_goal::num_goals::  1081
+test_remove_goal::num_goals::  1080
+test_remove_goal::num_goals::  1079
+test_remove_goal::num_goals::  1078
+test_remove_goal::num_goals::  1077
+test_remove_goal::num_goals::  1076
+test_remove_goal::num_goals::  1075
+test_remove_goal::num_goals::  1074
+test_remove_goal::num_goals::  1073
+test_remove_goal::num_goals::  1072
+test_remove_goal::num_goals::  1071
+test_remove_goal::num_goals::  1070
+test_remove_goal::num_goals::  1069
+test_remove_goal::num_goals::  1068
+test_remove_goal::num_goals::  1067
+test_remove_goal::num_goals::  1066
+test_remove_goal::num_goals::  1065
+test_remove_goal::num_goals::  1064
+test_remove_goal::num_goals::  1063
+test_remove_goal::num_goals::  1062
+test_remove_goal::num_goals::  1061
+test_remove_goal::num_goals::  1060
+test_remove_goal::num_goals::  1059
+test_remove_goal::num_goals::  1058
+test_remove_goal::num_goals::  1057
+test_remove_goal::num_goals::  1056
+test_remove_goal::num_goals::  1055
+test_remove_goal::num_goals::  1054
+test_remove_goal::num_goals::  1053
+test_remove_goal::num_goals::  1052
+test_remove_goal::num_goals::  1051
+test_remove_goal::num_goals::  1050
+test_remove_goal::num_goals::  1049
+test_remove_goal::num_goals::  1048
+test_remove_goal::num_goals::  1047
+test_remove_goal::num_goals::  1046
+test_remove_goal::num_goals::  1045
+test_remove_goal::num_goals::  1044
+test_remove_goal::num_goals::  1043
+test_remove_goal::num_goals::  1042
+test_remove_goal::num_goals::  1041
+test_remove_goal::num_goals::  1040
+test_remove_goal::num_goals::  1039
+test_remove_goal::num_goals::  1038
+test_remove_goal::num_goals::  1037
+test_remove_goal::num_goals::  1036
+test_remove_goal::num_goals::  1035
+test_remove_goal::num_goals::  1034
+test_remove_goal::num_goals::  1033
+test_remove_goal::num_goals::  1032
+test_remove_goal::num_goals::  1031
+test_remove_goal::num_goals::  1030
+test_remove_goal::num_goals::  1029
+test_remove_goal::num_goals::  1028
+test_remove_goal::num_goals::  1027
+test_remove_goal::num_goals::  1026
+test_remove_goal::num_goals::  1025
+test_remove_goal::num_goals::  1024
+test_remove_goal::num_goals::  1023
+test_remove_goal::num_goals::  1022
+test_remove_goal::num_goals::  1021
+test_remove_goal::num_goals::  1020
+test_remove_goal::num_goals::  1019
+test_remove_goal::num_goals::  1018
+test_remove_goal::num_goals::  1017
+test_remove_goal::num_goals::  1016
+test_remove_goal::num_goals::  1015
+test_remove_goal::num_goals::  1014
+test_remove_goal::num_goals::  1013
+test_remove_goal::num_goals::  1012
+test_remove_goal::num_goals::  1011
+test_remove_goal::num_goals::  1010
+test_remove_goal::num_goals::  1009
+test_remove_goal::num_goals::  1008
+test_remove_goal::num_goals::  1007
+test_remove_goal::num_goals::  1006
+test_remove_goal::num_goals::  1005
+test_remove_goal::num_goals::  1004
+test_remove_goal::num_goals::  1003
+test_remove_goal::num_goals::  1002
+test_remove_goal::num_goals::  1001
+test_remove_goal::num_goals::  1000
+test_remove_goal::num_goals::  999
+test_remove_goal::num_goals::  998
+test_remove_goal::num_goals::  997
+test_remove_goal::num_goals::  996
+test_remove_goal::num_goals::  995
+test_remove_goal::num_goals::  994
+test_remove_goal::num_goals::  993
+test_remove_goal::num_goals::  992
+test_remove_goal::num_goals::  991
+test_remove_goal::num_goals::  990
+test_remove_goal::num_goals::  989
+test_remove_goal::num_goals::  988
+test_remove_goal::num_goals::  987
+test_remove_goal::num_goals::  986
+test_remove_goal::num_goals::  985
+test_remove_goal::num_goals::  984
+test_remove_goal::num_goals::  983
+test_remove_goal::num_goals::  982
+test_remove_goal::num_goals::  981
+test_remove_goal::num_goals::  980
+test_remove_goal::num_goals::  979
+test_remove_goal::num_goals::  978
+test_remove_goal::num_goals::  977
+test_remove_goal::num_goals::  976
+test_remove_goal::num_goals::  975
+test_remove_goal::num_goals::  974
+test_remove_goal::num_goals::  973
+test_remove_goal::num_goals::  972
+test_remove_goal::num_goals::  971
+test_remove_goal::num_goals::  970
+test_remove_goal::num_goals::  969
+test_remove_goal::num_goals::  968
+test_remove_goal::num_goals::  967
+test_remove_goal::num_goals::  966
+test_remove_goal::num_goals::  965
+test_remove_goal::num_goals::  964
+test_remove_goal::num_goals::  963
+test_remove_goal::num_goals::  962
+test_remove_goal::num_goals::  961
+test_remove_goal::num_goals::  960
+test_remove_goal::num_goals::  959
+test_remove_goal::num_goals::  958
+test_remove_goal::num_goals::  957
+test_remove_goal::num_goals::  956
+test_remove_goal::num_goals::  955
+test_remove_goal::num_goals::  954
+test_remove_goal::num_goals::  953
+test_remove_goal::num_goals::  952
+test_remove_goal::num_goals::  951
+test_remove_goal::num_goals::  950
+test_remove_goal::num_goals::  949
+test_remove_goal::num_goals::  948
+test_remove_goal::num_goals::  947
+test_remove_goal::num_goals::  946
+test_remove_goal::num_goals::  945
+test_remove_goal::num_goals::  944
+test_remove_goal::num_goals::  943
+test_remove_goal::num_goals::  942
+test_remove_goal::num_goals::  941
+test_remove_goal::num_goals::  940
+test_remove_goal::num_goals::  939
+test_remove_goal::num_goals::  938
+test_remove_goal::num_goals::  937
+test_remove_goal::num_goals::  936
+test_remove_goal::num_goals::  935
+test_remove_goal::num_goals::  934
+test_remove_goal::num_goals::  933
+test_remove_goal::num_goals::  932
+test_remove_goal::num_goals::  931
+test_remove_goal::num_goals::  930
+test_remove_goal::num_goals::  929
+test_remove_goal::num_goals::  928
+test_remove_goal::num_goals::  927
+test_remove_goal::num_goals::  926
+test_remove_goal::num_goals::  925
+test_remove_goal::num_goals::  924
+test_remove_goal::num_goals::  923
+test_remove_goal::num_goals::  922
+test_remove_goal::num_goals::  921
+test_remove_goal::num_goals::  920
+test_remove_goal::num_goals::  919
+test_remove_goal::num_goals::  918
+test_remove_goal::num_goals::  917
+test_remove_goal::num_goals::  916
+test_remove_goal::num_goals::  915
+test_remove_goal::num_goals::  914
+test_remove_goal::num_goals::  913
+test_remove_goal::num_goals::  912
+test_remove_goal::num_goals::  911
+test_remove_goal::num_goals::  910
+test_remove_goal::num_goals::  909
+test_remove_goal::num_goals::  908
+test_remove_goal::num_goals::  907
+test_remove_goal::num_goals::  906
+test_remove_goal::num_goals::  905
+test_remove_goal::num_goals::  904
+test_remove_goal::num_goals::  903
+test_remove_goal::num_goals::  902
+test_remove_goal::num_goals::  901
+test_remove_goal::num_goals::  900
+test_remove_goal::num_goals::  899
+test_remove_goal::num_goals::  898
+test_remove_goal::num_goals::  897
+test_remove_goal::num_goals::  896
+test_remove_goal::num_goals::  895
+test_remove_goal::num_goals::  894
+test_remove_goal::num_goals::  893
+test_remove_goal::num_goals::  892
+test_remove_goal::num_goals::  891
+test_remove_goal::num_goals::  890
+test_remove_goal::num_goals::  889
+test_remove_goal::num_goals::  888
+test_remove_goal::num_goals::  887
+test_remove_goal::num_goals::  886
+test_remove_goal::num_goals::  885
+test_remove_goal::num_goals::  884
+test_remove_goal::num_goals::  883
+test_remove_goal::num_goals::  882
+test_remove_goal::num_goals::  881
+test_remove_goal::num_goals::  880
+test_remove_goal::num_goals::  879
+test_remove_goal::num_goals::  878
+test_remove_goal::num_goals::  877
+test_remove_goal::num_goals::  876
+test_remove_goal::num_goals::  875
+test_remove_goal::num_goals::  874
+test_remove_goal::num_goals::  873
+test_remove_goal::num_goals::  872
+test_remove_goal::num_goals::  871
+test_remove_goal::num_goals::  870
+test_remove_goal::num_goals::  869
+test_remove_goal::num_goals::  868
+test_remove_goal::num_goals::  867
+test_remove_goal::num_goals::  866
+test_remove_goal::num_goals::  865
+test_remove_goal::num_goals::  864
+test_remove_goal::num_goals::  863
+test_remove_goal::num_goals::  862
+test_remove_goal::num_goals::  861
+test_remove_goal::num_goals::  860
+test_remove_goal::num_goals::  859
+test_remove_goal::num_goals::  858
+test_remove_goal::num_goals::  857
+test_remove_goal::num_goals::  856
+test_remove_goal::num_goals::  855
+test_remove_goal::num_goals::  854
+test_remove_goal::num_goals::  853
+test_remove_goal::num_goals::  852
+test_remove_goal::num_goals::  851
+test_remove_goal::num_goals::  850
+test_remove_goal::num_goals::  849
+test_remove_goal::num_goals::  848
+test_remove_goal::num_goals::  847
+test_remove_goal::num_goals::  846
+test_remove_goal::num_goals::  845
+test_remove_goal::num_goals::  844
+test_remove_goal::num_goals::  843
+test_remove_goal::num_goals::  842
+test_remove_goal::num_goals::  841
+test_remove_goal::num_goals::  840
+test_remove_goal::num_goals::  839
+test_remove_goal::num_goals::  838
+test_remove_goal::num_goals::  837
+test_remove_goal::num_goals::  836
+test_remove_goal::num_goals::  835
+test_remove_goal::num_goals::  834
+test_remove_goal::num_goals::  833
+test_remove_goal::num_goals::  832
+test_remove_goal::num_goals::  831
+test_remove_goal::num_goals::  830
+test_remove_goal::num_goals::  829
+test_remove_goal::num_goals::  828
+test_remove_goal::num_goals::  827
+test_remove_goal::num_goals::  826
+test_remove_goal::num_goals::  825
+test_remove_goal::num_goals::  824
+test_remove_goal::num_goals::  823
+test_remove_goal::num_goals::  822
+test_remove_goal::num_goals::  821
+test_remove_goal::num_goals::  820
+test_remove_goal::num_goals::  819
+test_remove_goal::num_goals::  818
+test_remove_goal::num_goals::  817
+test_remove_goal::num_goals::  816
+test_remove_goal::num_goals::  815
+test_remove_goal::num_goals::  814
+test_remove_goal::num_goals::  813
+test_remove_goal::num_goals::  812
+test_remove_goal::num_goals::  811
+test_remove_goal::num_goals::  810
+test_remove_goal::num_goals::  809
+test_remove_goal::num_goals::  808
+test_remove_goal::num_goals::  807
+test_remove_goal::num_goals::  806
+test_remove_goal::num_goals::  805
+test_remove_goal::num_goals::  804
+test_remove_goal::num_goals::  803
+test_remove_goal::num_goals::  802
+test_remove_goal::num_goals::  801
+test_remove_goal::num_goals::  800
+test_remove_goal::num_goals::  799
+test_remove_goal::num_goals::  798
+test_remove_goal::num_goals::  797
+test_remove_goal::num_goals::  796
+test_remove_goal::num_goals::  795
+test_remove_goal::num_goals::  794
+test_remove_goal::num_goals::  793
+test_remove_goal::num_goals::  792
+test_remove_goal::num_goals::  791
+test_remove_goal::num_goals::  790
+test_remove_goal::num_goals::  789
+test_remove_goal::num_goals::  788
+test_remove_goal::num_goals::  787
+test_remove_goal::num_goals::  786
+test_remove_goal::num_goals::  785
+test_remove_goal::num_goals::  784
+test_remove_goal::num_goals::  783
+test_remove_goal::num_goals::  782
+test_remove_goal::num_goals::  781
+test_remove_goal::num_goals::  780
+test_remove_goal::num_goals::  779
+test_remove_goal::num_goals::  778
+test_remove_goal::num_goals::  777
+test_remove_goal::num_goals::  776
+test_remove_goal::num_goals::  775
+test_remove_goal::num_goals::  774
+test_remove_goal::num_goals::  773
+test_remove_goal::num_goals::  772
+test_remove_goal::num_goals::  771
+test_remove_goal::num_goals::  770
+test_remove_goal::num_goals::  769
+test_remove_goal::num_goals::  768
+test_remove_goal::num_goals::  767
+test_remove_goal::num_goals::  766
+test_remove_goal::num_goals::  765
+test_remove_goal::num_goals::  764
+test_remove_goal::num_goals::  763
+test_remove_goal::num_goals::  762
+test_remove_goal::num_goals::  761
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  760
+test_remove_goal::num_goals::  759
+test_remove_goal::num_goals::  758
+test_remove_goal::num_goals::  757
+test_remove_goal::num_goals::  756
+test_remove_goal::num_goals::  755
+test_remove_goal::num_goals::  754
+test_remove_goal::num_goals::  753
+test_remove_goal::num_goals::  752
+test_remove_goal::num_goals::  751
+test_remove_goal::num_goals::  750
+test_remove_goal::num_goals::  749
+test_remove_goal::num_goals::  748
+test_remove_goal::num_goals::  747
+test_remove_goal::num_goals::  746
+test_remove_goal::num_goals::  745
+test_remove_goal::num_goals::  744
+test_remove_goal::num_goals::  743
+test_remove_goal::num_goals::  742
+test_remove_goal::num_goals::  741
+test_remove_goal::num_goals::  740
+test_remove_goal::num_goals::  739
+test_remove_goal::num_goals::  738
+test_remove_goal::num_goals::  737
+test_remove_goal::num_goals::  736
+test_remove_goal::num_goals::  735
+test_remove_goal::num_goals::  734
+test_remove_goal::num_goals::  733
+test_remove_goal::num_goals::  732
+test_remove_goal::num_goals::  731
+test_remove_goal::num_goals::  730
+test_remove_goal::num_goals::  729
+test_remove_goal::num_goals::  728
+test_remove_goal::num_goals::  727
+test_remove_goal::num_goals::  726
+test_remove_goal::num_goals::  725
+test_remove_goal::num_goals::  724
+test_remove_goal::num_goals::  723
+test_remove_goal::num_goals::  722
+test_remove_goal::num_goals::  721
+test_remove_goal::num_goals::  720
+test_remove_goal::num_goals::  719
+test_remove_goal::num_goals::  718
+test_remove_goal::num_goals::  717
+test_remove_goal::num_goals::  716
+test_remove_goal::num_goals::  715
+test_remove_goal::num_goals::  714
+test_remove_goal::num_goals::  713
+test_remove_goal::num_goals::  712
+test_remove_goal::num_goals::  711
+test_remove_goal::num_goals::  710
+test_remove_goal::num_goals::  709
+test_remove_goal::num_goals::  708
+test_remove_goal::num_goals::  707
+test_remove_goal::num_goals::  706
+test_remove_goal::num_goals::  705
+test_remove_goal::num_goals::  704
+test_remove_goal::num_goals::  703
+test_remove_goal::num_goals::  702
+test_remove_goal::num_goals::  701
+test_remove_goal::num_goals::  700
+test_remove_goal::num_goals::  699
+test_remove_goal::num_goals::  698
+test_remove_goal::num_goals::  697
+test_remove_goal::num_goals::  696
+test_remove_goal::num_goals::  695
+test_remove_goal::num_goals::  694
+test_remove_goal::num_goals::  693
+test_remove_goal::num_goals::  692
+test_remove_goal::num_goals::  691
+test_remove_goal::num_goals::  690
+test_remove_goal::num_goals::  689
+test_remove_goal::num_goals::  688
+test_remove_goal::num_goals::  687
+test_remove_goal::num_goals::  686
+test_remove_goal::num_goals::  685
+test_remove_goal::num_goals::  684
+test_remove_goal::num_goals::  683
+test_remove_goal::num_goals::  682
+test_remove_goal::num_goals::  681
+test_remove_goal::num_goals::  680
+test_remove_goal::num_goals::  679
+test_remove_goal::num_goals::  678
+test_remove_goal::num_goals::  677
+test_remove_goal::num_goals::  676
+test_remove_goal::num_goals::  675
+test_remove_goal::num_goals::  674
+test_remove_goal::num_goals::  673
+test_remove_goal::num_goals::  672
+test_remove_goal::num_goals::  671
+test_remove_goal::num_goals::  670
+test_remove_goal::num_goals::  669
+test_remove_goal::num_goals::  668
+test_remove_goal::num_goals::  667
+test_remove_goal::num_goals::  666
+test_remove_goal::num_goals::  665
+test_remove_goal::num_goals::  664
+test_remove_goal::num_goals::  663
+test_remove_goal::num_goals::  662
+test_remove_goal::num_goals::  661
+test_remove_goal::num_goals::  660
+test_remove_goal::num_goals::  659
+test_remove_goal::num_goals::  658
+test_remove_goal::num_goals::  657
+test_remove_goal::num_goals::  656
+test_remove_goal::num_goals::  655
+test_remove_goal::num_goals::  654
+test_remove_goal::num_goals::  653
+test_remove_goal::num_goals::  652
+test_remove_goal::num_goals::  651
+test_remove_goal::num_goals::  650
+test_remove_goal::num_goals::  649
+test_remove_goal::num_goals::  648
+test_remove_goal::num_goals::  647
+test_remove_goal::num_goals::  646
+test_remove_goal::num_goals::  645
+test_remove_goal::num_goals::  644
+test_remove_goal::num_goals::  643
+test_remove_goal::num_goals::  642
+test_remove_goal::num_goals::  641
+test_remove_goal::num_goals::  640
+test_remove_goal::num_goals::  639
+test_remove_goal::num_goals::  638
+test_remove_goal::num_goals::  637
+test_remove_goal::num_goals::  636
+test_remove_goal::num_goals::  635
+test_remove_goal::num_goals::  634
+test_remove_goal::num_goals::  633
+test_remove_goal::num_goals::  632
+test_remove_goal::num_goals::  631
+test_remove_goal::num_goals::  630
+test_remove_goal::num_goals::  629
+test_remove_goal::num_goals::  628
+test_remove_goal::num_goals::  627
+test_remove_goal::num_goals::  626
+test_remove_goal::num_goals::  625
+test_remove_goal::num_goals::  624
+test_remove_goal::num_goals::  623
+test_remove_goal::num_goals::  622
+test_remove_goal::num_goals::  621
+test_remove_goal::num_goals::  620
+test_remove_goal::num_goals::  619
+test_remove_goal::num_goals::  618
+test_remove_goal::num_goals::  617
+test_remove_goal::num_goals::  616
+test_remove_goal::num_goals::  615
+test_remove_goal::num_goals::  614
+test_remove_goal::num_goals::  613
+test_remove_goal::num_goals::  612
+test_remove_goal::num_goals::  611
+test_remove_goal::num_goals::  610
+test_remove_goal::num_goals::  609
+test_remove_goal::num_goals::  608
+test_remove_goal::num_goals::  607
+test_remove_goal::num_goals::  606
+test_remove_goal::num_goals::  605
+test_remove_goal::num_goals::  604
+test_remove_goal::num_goals::  603
+test_remove_goal::num_goals::  602
+test_remove_goal::num_goals::  601
+test_remove_goal::num_goals::  600
+test_remove_goal::num_goals::  599
+test_remove_goal::num_goals::  598
+test_remove_goal::num_goals::  597
+test_remove_goal::num_goals::  596
+test_remove_goal::num_goals::  595
+test_remove_goal::num_goals::  594
+test_remove_goal::num_goals::  593
+test_remove_goal::num_goals::  592
+test_remove_goal::num_goals::  591
+test_remove_goal::num_goals::  590
+test_remove_goal::num_goals::  589
+test_remove_goal::num_goals::  588
+test_remove_goal::num_goals::  587
+test_remove_goal::num_goals::  586
+test_remove_goal::num_goals::  585
+test_remove_goal::num_goals::  584
+test_remove_goal::num_goals::  583
+test_remove_goal::num_goals::  582
+test_remove_goal::num_goals::  581
+test_remove_goal::num_goals::  580
+test_remove_goal::num_goals::  579
+test_remove_goal::num_goals::  578
+test_remove_goal::num_goals::  577
+test_remove_goal::num_goals::  576
+test_remove_goal::num_goals::  575
+test_remove_goal::num_goals::  574
+test_remove_goal::num_goals::  573
+test_remove_goal::num_goals::  572
+test_remove_goal::num_goals::  571
+test_remove_goal::num_goals::  570
+test_remove_goal::num_goals::  569
+test_remove_goal::num_goals::  568
+test_remove_goal::num_goals::  567
+test_remove_goal::num_goals::  566
+test_remove_goal::num_goals::  565
+test_remove_goal::num_goals::  564
+test_remove_goal::num_goals::  563
+test_remove_goal::num_goals::  562
+test_remove_goal::num_goals::  561
+test_remove_goal::num_goals::  560
+test_remove_goal::num_goals::  559
+test_remove_goal::num_goals::  558
+test_remove_goal::num_goals::  557
+test_remove_goal::num_goals::  556
+test_remove_goal::num_goals::  555
+test_remove_goal::num_goals::  554
+test_remove_goal::num_goals::  553
+test_remove_goal::num_goals::  552
+test_remove_goal::num_goals::  551
+test_remove_goal::num_goals::  550
+test_remove_goal::num_goals::  549
+test_remove_goal::num_goals::  548
+test_remove_goal::num_goals::  547
+test_remove_goal::num_goals::  546
+test_remove_goal::num_goals::  545
+test_remove_goal::num_goals::  544
+test_remove_goal::num_goals::  543
+test_remove_goal::num_goals::  542
+test_remove_goal::num_goals::  541
+test_remove_goal::num_goals::  540
+test_remove_goal::num_goals::  539
+test_remove_goal::num_goals::  538
+test_remove_goal::num_goals::  537
+test_remove_goal::num_goals::  536
+test_remove_goal::num_goals::  535
+test_remove_goal::num_goals::  534
+test_remove_goal::num_goals::  533
+test_remove_goal::num_goals::  532
+test_remove_goal::num_goals::  531
+test_remove_goal::num_goals::  530
+test_remove_goal::num_goals::  529
+test_remove_goal::num_goals::  528
+test_remove_goal::num_goals::  527
+test_remove_goal::num_goals::  526
+test_remove_goal::num_goals::  525
+test_remove_goal::num_goals::  524
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  523
+test_remove_goal::num_goals::  522
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  521
+test_remove_goal::num_goals::  520
+test_remove_goal::num_goals::  519
+test_remove_goal::num_goals::  518
+test_remove_goal::num_goals::  517
+test_remove_goal::num_goals::  516
+test_remove_goal::num_goals::  515
+test_remove_goal::num_goals::  514
+test_remove_goal::num_goals::  513
+test_remove_goal::num_goals::  512
+test_remove_goal::num_goals::  511
+test_remove_goal::num_goals::  510
+test_remove_goal::num_goals::  509
+test_remove_goal::num_goals::  508
+test_remove_goal::num_goals::  507
+test_remove_goal::num_goals::  506
+test_remove_goal::num_goals::  505
+test_remove_goal::num_goals::  504
+test_remove_goal::num_goals::  503
+test_remove_goal::num_goals::  502
+test_remove_goal::num_goals::  501
+test_remove_goal::num_goals::  500
+test_remove_goal::num_goals::  499
+test_remove_goal::num_goals::  498
+test_remove_goal::num_goals::  497
+test_remove_goal::num_goals::  496
+test_remove_goal::num_goals::  495
+test_remove_goal::num_goals::  494
+test_remove_goal::num_goals::  493
+test_remove_goal::num_goals::  492
+test_remove_goal::num_goals::  491
+test_remove_goal::num_goals::  490
+test_remove_goal::num_goals::  489
+test_remove_goal::num_goals::  488
+test_remove_goal::num_goals::  487
+test_remove_goal::num_goals::  486
+test_remove_goal::num_goals::  485
+test_remove_goal::num_goals::  484
+test_remove_goal::num_goals::  483
+test_remove_goal::num_goals::  482
+test_remove_goal::num_goals::  481
+test_remove_goal::num_goals::  480
+test_remove_goal::num_goals::  479
+test_remove_goal::num_goals::  478
+test_remove_goal::num_goals::  477
+test_remove_goal::num_goals::  476
+test_remove_goal::num_goals::  475
+test_remove_goal::num_goals::  474
+test_remove_goal::num_goals::  473
+test_remove_goal::num_goals::  472
+test_remove_goal::num_goals::  471
+test_remove_goal::num_goals::  470
+test_remove_goal::num_goals::  469
+test_remove_goal::num_goals::  468
+test_remove_goal::num_goals::  467
+test_remove_goal::num_goals::  466
+test_remove_goal::num_goals::  465
+test_remove_goal::num_goals::  464
+test_remove_goal::num_goals::  463
+test_remove_goal::num_goals::  462
+test_remove_goal::num_goals::  461
+test_remove_goal::num_goals::  460
+test_remove_goal::num_goals::  459
+test_remove_goal::num_goals::  458
+test_remove_goal::num_goals::  457
+test_remove_goal::num_goals::  456
+test_remove_goal::num_goals::  455
+test_remove_goal::num_goals::  454
+test_remove_goal::num_goals::  453
+test_remove_goal::num_goals::  452
+test_remove_goal::num_goals::  451
+test_remove_goal::num_goals::  450
+test_remove_goal::num_goals::  449
+test_remove_goal::num_goals::  448
+test_remove_goal::num_goals::  447
+test_remove_goal::num_goals::  446
+test_remove_goal::num_goals::  445
+test_remove_goal::num_goals::  444
+test_remove_goal::num_goals::  443
+test_remove_goal::num_goals::  442
+test_remove_goal::num_goals::  441
+test_remove_goal::num_goals::  440
+test_remove_goal::num_goals::  439
+test_remove_goal::num_goals::  438
+test_remove_goal::num_goals::  437
+test_remove_goal::num_goals::  436
+test_remove_goal::num_goals::  435
+test_remove_goal::num_goals::  434
+test_remove_goal::num_goals::  433
+test_remove_goal::num_goals::  432
+test_remove_goal::num_goals::  431
+test_remove_goal::num_goals::  430
+test_remove_goal::num_goals::  429
+test_remove_goal::num_goals::  428
+test_remove_goal::num_goals::  427
+test_remove_goal::num_goals::  426
+test_remove_goal::num_goals::  425
+test_remove_goal::num_goals::  424
+test_remove_goal::num_goals::  423
+test_remove_goal::num_goals::  422
+test_remove_goal::num_goals::  421
+test_remove_goal::num_goals::  420
+test_remove_goal::num_goals::  419
+test_remove_goal::num_goals::  418
+test_remove_goal::num_goals::  417
+test_remove_goal::num_goals::  416
+test_remove_goal::num_goals::  415
+test_remove_goal::num_goals::  414
+test_remove_goal::num_goals::  413
+test_remove_goal::num_goals::  412
+test_remove_goal::num_goals::  411
+test_remove_goal::num_goals::  410
+test_remove_goal::num_goals::  409
+test_remove_goal::num_goals::  408
+test_remove_goal::num_goals::  407
+test_remove_goal::num_goals::  406
+test_remove_goal::num_goals::  405
+test_remove_goal::num_goals::  404
+test_remove_goal::num_goals::  403
+test_remove_goal::num_goals::  402
+test_remove_goal::num_goals::  401
+test_remove_goal::num_goals::  400
+test_remove_goal::num_goals::  399
+test_remove_goal::num_goals::  398
+test_remove_goal::num_goals::  397
+test_remove_goal::num_goals::  396
+test_remove_goal::num_goals::  395
+test_remove_goal::num_goals::  394
+test_remove_goal::num_goals::  393
+test_remove_goal::num_goals::  392
+test_remove_goal::num_goals::  391
+test_remove_goal::num_goals::  390
+test_remove_goal::num_goals::  389
+test_remove_goal::num_goals::  388
+test_remove_goal::num_goals::  387
+test_remove_goal::num_goals::  386
+test_remove_goal::num_goals::  385
+test_remove_goal::num_goals::  384
+test_remove_goal::num_goals::  383
+test_remove_goal::num_goals::  382
+test_remove_goal::num_goals::  381
+test_remove_goal::num_goals::  380
+test_remove_goal::num_goals::  379
+test_remove_goal::num_goals::  378
+test_remove_goal::num_goals::  377
+test_remove_goal::num_goals::  376
+test_remove_goal::num_goals::  375
+test_remove_goal::num_goals::  374
+test_remove_goal::num_goals::  373
+test_remove_goal::num_goals::  372
+test_remove_goal::num_goals::  371
+test_remove_goal::num_goals::  370
+test_remove_goal::num_goals::  369
+test_remove_goal::num_goals::  368
+test_remove_goal::num_goals::  367
+test_remove_goal::num_goals::  366
+test_remove_goal::num_goals::  365
+test_remove_goal::num_goals::  364
+test_remove_goal::num_goals::  363
+test_remove_goal::num_goals::  362
+test_remove_goal::num_goals::  361
+test_remove_goal::num_goals::  360
+test_remove_goal::num_goals::  359
+test_remove_goal::num_goals::  358
+test_remove_goal::num_goals::  357
+test_remove_goal::num_goals::  356
+test_remove_goal::num_goals::  355
+test_remove_goal::num_goals::  354
+test_remove_goal::num_goals::  353
+test_remove_goal::num_goals::  352
+test_remove_goal::num_goals::  351
+test_remove_goal::num_goals::  350
+test_remove_goal::num_goals::  349
+test_remove_goal::num_goals::  348
+test_remove_goal::num_goals::  347
+test_remove_goal::num_goals::  346
+test_remove_goal::num_goals::  345
+test_remove_goal::num_goals::  344
+test_remove_goal::num_goals::  343
+test_remove_goal::num_goals::  342
+test_remove_goal::num_goals::  341
+test_remove_goal::num_goals::  340
+test_remove_goal::num_goals::  339
+test_remove_goal::num_goals::  338
+test_remove_goal::num_goals::  337
+test_remove_goal::num_goals::  336
+test_remove_goal::num_goals::  335
+test_remove_goal::num_goals::  334
+test_remove_goal::num_goals::  333
+test_remove_goal::num_goals::  332
+test_remove_goal::num_goals::  331
+test_remove_goal::num_goals::  330
+test_remove_goal::num_goals::  329
+test_remove_goal::num_goals::  328
+test_remove_goal::num_goals::  327
+test_remove_goal::num_goals::  326
+test_remove_goal::num_goals::  325
+test_remove_goal::num_goals::  324
+test_remove_goal::num_goals::  323
+test_remove_goal::num_goals::  322
+test_remove_goal::num_goals::  321
+test_remove_goal::num_goals::  320
+test_remove_goal::num_goals::  319
+test_remove_goal::num_goals::  318
+test_remove_goal::num_goals::  317
+test_remove_goal::num_goals::  316
+test_remove_goal::num_goals::  315
+test_remove_goal::num_goals::  314
+test_remove_goal::num_goals::  313
+test_remove_goal::num_goals::  312
+test_remove_goal::num_goals::  311
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  310
+test_remove_goal::num_goals::  309
+test_remove_goal::num_goals::  308
+test_remove_goal::num_goals::  307
+test_remove_goal::num_goals::  306
+test_remove_goal::num_goals::  305
+test_remove_goal::num_goals::  304
+test_remove_goal::num_goals::  303
+test_remove_goal::num_goals::  302
+test_remove_goal::num_goals::  301
+test_remove_goal::num_goals::  300
+test_remove_goal::num_goals::  299
+test_remove_goal::num_goals::  298
+test_remove_goal::num_goals::  297
+test_remove_goal::num_goals::  296
+test_remove_goal::num_goals::  295
+test_remove_goal::num_goals::  294
+test_remove_goal::num_goals::  293
+test_remove_goal::num_goals::  292
+test_remove_goal::num_goals::  291
+test_remove_goal::num_goals::  290
+test_remove_goal::num_goals::  289
+test_remove_goal::num_goals::  288
+test_remove_goal::num_goals::  287
+test_remove_goal::num_goals::  286
+test_remove_goal::num_goals::  285
+test_remove_goal::num_goals::  284
+test_remove_goal::num_goals::  283
+test_remove_goal::num_goals::  282
+test_remove_goal::num_goals::  281
+test_remove_goal::num_goals::  280
+test_remove_goal::num_goals::  279
+test_remove_goal::num_goals::  278
+test_remove_goal::num_goals::  277
+test_remove_goal::num_goals::  276
+test_remove_goal::num_goals::  275
+test_remove_goal::num_goals::  274
+test_remove_goal::num_goals::  273
+test_remove_goal::num_goals::  272
+test_remove_goal::num_goals::  271
+test_remove_goal::num_goals::  270
+test_remove_goal::num_goals::  269
+test_remove_goal::num_goals::  268
+test_remove_goal::num_goals::  267
+test_remove_goal::num_goals::  266
+test_remove_goal::num_goals::  265
+test_remove_goal::num_goals::  264
+test_remove_goal::num_goals::  263
+test_remove_goal::num_goals::  262
+test_remove_goal::num_goals::  261
+test_remove_goal::num_goals::  260
+test_remove_goal::num_goals::  259
+test_remove_goal::num_goals::  258
+test_remove_goal::num_goals::  257
+test_remove_goal::num_goals::  256
+test_remove_goal::num_goals::  255
+test_remove_goal::num_goals::  254
+test_remove_goal::num_goals::  253
+test_remove_goal::num_goals::  252
+test_remove_goal::num_goals::  251
+test_remove_goal::num_goals::  250
+test_remove_goal::num_goals::  249
+test_remove_goal::num_goals::  248
+test_remove_goal::num_goals::  247
+test_remove_goal::num_goals::  246
+test_remove_goal::num_goals::  245
+test_remove_goal::num_goals::  244
+test_remove_goal::num_goals::  243
+test_remove_goal::num_goals::  242
+test_remove_goal::num_goals::  241
+test_remove_goal::num_goals::  240
+test_remove_goal::num_goals::  239
+test_remove_goal::num_goals::  238
+test_remove_goal::num_goals::  237
+test_remove_goal::num_goals::  236
+test_remove_goal::num_goals::  235
+test_remove_goal::num_goals::  234
+test_remove_goal::num_goals::  233
+test_remove_goal::num_goals::  232
+test_remove_goal::num_goals::  231
+test_remove_goal::num_goals::  230
+test_remove_goal::num_goals::  229
+test_remove_goal::num_goals::  228
+test_remove_goal::num_goals::  227
+test_remove_goal::num_goals::  226
+test_remove_goal::num_goals::  225
+test_remove_goal::num_goals::  224
+test_remove_goal::num_goals::  223
+test_remove_goal::num_goals::  222
+test_remove_goal::num_goals::  221
+test_remove_goal::num_goals::  220
+test_remove_goal::num_goals::  219
+test_remove_goal::num_goals::  218
+test_remove_goal::num_goals::  217
+test_remove_goal::num_goals::  216
+test_remove_goal::num_goals::  215
+test_remove_goal::num_goals::  214
+test_remove_goal::num_goals::  213
+test_remove_goal::num_goals::  212
+test_remove_goal::num_goals::  211
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  210
+test_remove_goal::num_goals::  209
+test_remove_goal::num_goals::  208
+test_remove_goal::num_goals::  207
+test_remove_goal::num_goals::  206
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  205
+test_remove_goal::num_goals::  204
+test_remove_goal::num_goals::  203
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  202
+test_remove_goal::num_goals::  201
+test_remove_goal::num_goals::  200
+test_remove_goal::num_goals::  199
+test_remove_goal::num_goals::  198
+test_remove_goal::num_goals::  197
+test_remove_goal::num_goals::  196
+test_remove_goal::num_goals::  195
+test_remove_goal::num_goals::  194
+test_remove_goal::num_goals::  193
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  192
+test_remove_goal::num_goals::  191
+test_remove_goal::num_goals::  190
+test_remove_goal::num_goals::  189
+test_remove_goal::num_goals::  188
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  187
+test_remove_goal::num_goals::  186
+test_remove_goal::num_goals::  185
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  184
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  183
+test_remove_goal::num_goals::  182
+test_remove_goal::num_goals::  181
+test_remove_goal::num_goals::  180
+test_remove_goal::num_goals::  179
+test_remove_goal::num_goals::  178
+test_remove_goal::num_goals::  177
+test_remove_goal::num_goals::  176
+test_remove_goal::num_goals::  175
+test_remove_goal::num_goals::  174
+test_remove_goal::num_goals::  173
+test_remove_goal::num_goals::  172
+test_remove_goal::num_goals::  171
+test_remove_goal::num_goals::  170
+test_remove_goal::num_goals::  169
+test_remove_goal::num_goals::  168
+test_remove_goal::num_goals::  167
+test_remove_goal::num_goals::  166
+test_remove_goal::num_goals::  165
+test_remove_goal::num_goals::  164
+test_remove_goal::num_goals::  163
+test_remove_goal::num_goals::  162
+test_remove_goal::num_goals::  161
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  160
+test_remove_goal::num_goals::  159
+test_remove_goal::num_goals::  158
+test_remove_goal::num_goals::  157
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  156
+test_remove_goal::num_goals::  155
+test_remove_goal::num_goals::  154
+test_remove_goal::num_goals::  153
+test_remove_goal::num_goals::  152
+test_remove_goal::num_goals::  151
+test_remove_goal::num_goals::  150
+test_remove_goal::num_goals::  149
+test_remove_goal::num_goals::  148
+test_remove_goal::num_goals::  147
+test_remove_goal::num_goals::  146
+test_remove_goal::num_goals::  145
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  144
+test_remove_goal::num_goals::  143
+test_remove_goal::num_goals::  142
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  141
+test_remove_goal::num_goals::  140
+test_remove_goal::num_goals::  139
+test_remove_goal::num_goals::  138
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  137
+test_remove_goal::num_goals::  136
+test_remove_goal::num_goals::  135
+test_remove_goal::num_goals::  134
+test_remove_goal::num_goals::  133
+test_remove_goal::num_goals::  132
+test_remove_goal::num_goals::  131
+test_remove_goal::num_goals::  130
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  129
+test_remove_goal::num_goals::  128
+test_remove_goal::num_goals::  127
+test_remove_goal::num_goals::  126
+test_remove_goal::num_goals::  125
+test_remove_goal::num_goals::  124
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  123
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  122
+test_remove_goal::num_goals::  121
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  120
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  119
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  118
+test_remove_goal::num_goals::  117
+test_remove_goal::num_goals::  116
+test_remove_goal::num_goals::  115
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  114
+test_remove_goal::num_goals::  113
+test_remove_goal::num_goals::  112
+test_remove_goal::num_goals::  111
+test_remove_goal::num_goals::  110
+test_remove_goal::num_goals::  109
+test_remove_goal::num_goals::  108
+test_remove_goal::num_goals::  107
+test_remove_goal::num_goals::  106
+test_remove_goal::num_goals::  105
+test_remove_goal::num_goals::  104
+test_remove_goal::num_goals::  103
+test_remove_goal::num_goals::  102
+test_remove_goal::num_goals::  101
+test_remove_goal::num_goals::  100
+test_remove_goal::num_goals::  99
+test_remove_goal::num_goals::  98
+test_remove_goal::num_goals::  97
+test_remove_goal::num_goals::  96
+test_remove_goal::num_goals::  95
+test_remove_goal::num_goals::  94
+test_remove_goal::num_goals::  93
+test_remove_goal::num_goals::  92
+test_remove_goal::num_goals::  91
+test_remove_goal::num_goals::  90
+test_remove_goal::num_goals::  89
+test_remove_goal::num_goals::  88
+test_remove_goal::num_goals::  87
+.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it..b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.b3Warning[examples/Importers/ImportURDFDemo/BulletUrdfImporter.cpp,126]:
+expected a world element, continuing without it.did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  86
+test_remove_goal::num_goals::  85
+test_remove_goal::num_goals::  84
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  83
+test_remove_goal::num_goals::  82
+test_remove_goal::num_goals::  81
+test_remove_goal::num_goals::  80
+test_remove_goal::num_goals::  79
+test_remove_goal::num_goals::  78
+test_remove_goal::num_goals::  77
+test_remove_goal::num_goals::  76
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  75
+test_remove_goal::num_goals::  74
+test_remove_goal::num_goals::  73
+test_remove_goal::num_goals::  72
+test_remove_goal::num_goals::  71
+test_remove_goal::num_goals::  70
+test_remove_goal::num_goals::  69
+test_remove_goal::num_goals::  68
+test_remove_goal::num_goals::  67
+test_remove_goal::num_goals::  66
+test_remove_goal::num_goals::  65
+test_remove_goal::num_goals::  64
+test_remove_goal::num_goals::  63
+test_remove_goal::num_goals::  62
+test_remove_goal::num_goals::  61
+test_remove_goal::num_goals::  60
+test_remove_goal::num_goals::  59
+test_remove_goal::num_goals::  58
+test_remove_goal::num_goals::  57
+test_remove_goal::num_goals::  56
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  55
+test_remove_goal::num_goals::  54
+test_remove_goal::num_goals::  53
+test_remove_goal::num_goals::  52
+test_remove_goal::num_goals::  51
+test_remove_goal::num_goals::  50
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  49
+test_remove_goal::num_goals::  48
+test_remove_goal::num_goals::  47
+test_remove_goal::num_goals::  46
+test_remove_goal::num_goals::  45
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  44
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  43
+test_remove_goal::num_goals::  42
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  41
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  40
+test_remove_goal::num_goals::  39
+test_remove_goal::num_goals::  38
+test_remove_goal::num_goals::  37
+test_remove_goal::num_goals::  36
+test_remove_goal::num_goals::  35
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  34
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  33
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  32
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  31
+test_remove_goal::num_goals::  30
+test_remove_goal::num_goals::  29
+test_remove_goal::num_goals::  28
+test_remove_goal::num_goals::  27
+test_remove_goal::num_goals::  26
+test_remove_goal::num_goals::  25
+test_remove_goal::num_goals::  24
+test_remove_goal::num_goals::  23
+test_remove_goal::num_goals::  22
+test_remove_goal::num_goals::  21
+test_remove_goal::num_goals::  20
+test_remove_goal::num_goals::  19
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  18
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  17
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.08
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.16
+test_remove_goal::num_goals::  16
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  15
+test_remove_goal::num_goals::  14
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  13
+test_remove_goal::num_goals::  12
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  11
+test_remove_goal::num_goals::  10
+test_remove_goal::num_goals::  9
+test_remove_goal::num_goals::  8
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  7
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  6
+test_remove_goal::num_goals::  5
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+test_remove_goal::num_goals::  4
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  3
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.08
+test_remove_goal::num_goals::  2
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+test_remove_goal::num_goals::  1
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.028667932455359372, 0.09691101905069259, 0.2903707307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.006667932455359361, 0.09944701905069253, 0.2934387307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [0.015332067544640641, 0.09691101905069262, 0.2903707307746705]
+Intializing action
+self.ws_max,self.ws_min::  [-0.009296185329460542, 0.09691101905069259, 0.3072372982722349] [-0.05670381467053947, -0.02881099505230264, 0.21541076772815337]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.028667932455359372, 0.09691101905069259, 0.2903707307746705]
+.
+----------------------------------------------------------------------
+Ran 6 tests in 17.442s
+
+OK
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [-0.006667932455359361, 0.09944701905069253, 0.2934387307746705]
+choose_closest_goal_to_figner::index_min::  648
+choose_closest_goal_to_figner::goal::  [0.015332067544640641, 0.09691101905069262, 0.2903707307746705]
+Intializing action
+self.ws_max,self.ws_min::  [-0.009296185329460542, 0.09691101905069259, 0.3072372982722349] [-0.05670381467053947, -0.02881099505230264, 0.21541076772815337]
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.08
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.02
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.04
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.08
+did not find a neighbure. Gowing  neighbour_radius inorder to find a new neighboure 
+new search radious::  0.16

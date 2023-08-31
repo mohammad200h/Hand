@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<!--This file contains the SDF model of a KUKA iiwa robot with a wsg50 gripper.
+    It has been produced from the varients in //third_party/robotics/models.
+    Note:  This file is temporary, and should be deleted once Bullet supports
+    importing models in SDF.  Also, this file has been specialized for Bullet,
+    because the mass of the base link has been set to 0, as needed by Bullet.
+    Note:  All of the gripper link poses have been adjusted in the z direction
+    to achieve a reasonable position of the gripper relative to the arm.
+    Note: The joint names for the KUKA have been changed to J0, J1, etc. -->
+    <!--There is problem with the kuka mesh and everytime i use it gazebo crashes so I am gonna comment that part-->
+
+
+<sdf version='1.6'>
+  <model name="kuka_handlit">
+    <link name = "world">
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <inertial>
+            <pose frame=''>0 0 0.0 0 0 0</pose>
+            <mass>0.0</mass>
+            <inertia>
+                <ixx>0.</ixx>
+                <ixy>0</ixy>
+                <ixz>0</ixz>
+                <iyy>0.</iyy>
+                <iyz>0</iyz>
+                <izz>0.</izz>
+            </inertia>
+        </inertial>
+    </link>
+
+ 
+
+    <!--Hand-->
+
+    
+            <link name =  "ws_FF">
+                <pose frame=''>0 0 0 0.0 0.0 0.0</pose>
+                <inertial>
+                    <pose frame=''>0 0 0.09 0 0 0</pose>
+                    <mass>1.8</mass>
+                    <inertia>
+                        <ixx>0.108</ixx>
+                        <ixy>0</ixy>
+                        <ixz>0</ixz>
+                        <iyy>0.108</iyy>
+                        <iyz>0</iyz>
+                        <izz>0.054</izz>
+                    </inertia>
+                </inertial>
+
+                <visual name='visual_ws_FF'>
+
+                    <geometry>
+                        <mesh>
+                             <scale>1 1 1</scale>
+                            <uri>/meshes/ws/FF/FF_ws.dae</uri>
+                        </mesh>
+                    </geometry>
+                    <material>
+                        <ambient>0.44140625 0.27734375 0.203125 0.2</ambient>
+                        <diffuse>0.44140625 0.27734375 0.203125 0.2</diffuse>
+                        <specular>0.44140625 0.27734375 0.203125 0.2</specular>
+                        <emissive>0 0 0 0</emissive>
+                    </material>
+                </visual>
+            </link>
+
+            <joint name = "ws_FF"  type ="fixed">
+               <child>ws_FF</child>
+                <parent>world</parent>
+                <axis>
+                    <xyz></xyz>
+                </axis>
+            </joint>
+
+          
+    
+
+
+
+    
+   
+   
+ 
+  </model>
+
+</sdf>
