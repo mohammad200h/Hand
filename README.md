@@ -5,7 +5,7 @@ Here we provide three different gym enviornments to tackle large action space th
 
 <div style="display: flex; justify-content: space-between;">
     <img src="https://github.com/mohammad200h/Hand/blob/main/doc/hand.png?raw=true)" alt="Image 1" width="30%">
-    <img src="https://github.com/mohammad200h/Hand/blob/main/doc/hand.png?raw=true)" alt="Image 2" width="30%">
-    <img src="https://github.com/mohammad200h/Hand/blob/main/doc/hand.png?raw=true)" alt="Image 3" width="30%">
+    <img src="https://github.com/mohammad200h/Hand/blob/main/doc/fingers.png?raw=true)" alt="Image 2" width="30%">
+    <img src="https://github.com/mohammad200h/Hand/blob/main/doc/thumb.png?raw=true)" alt="Image 3" width="30%">
 </div>
 
