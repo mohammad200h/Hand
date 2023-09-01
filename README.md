@@ -14,7 +14,6 @@ Here we provide three different gym enviornments to tackle large action space th
 ```bash
     cd tiny_tf && pip3 install -e .
     cd fingers_multiprocessing && pip3 install -e .
-    cd hand_multiprocessing && pip3 install -e .
-    cd thumb_multiprocessing && pip3 install -e .
+    cd hand_multiprocessing    && pip3 install -e .
+    cd thumb_multiprocessing   && pip3 install -e .
 ```
-
