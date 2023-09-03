@@ -9,7 +9,7 @@ Here we provide three different gym enviornments to tackle large action space th
     <img src="https://github.com/mohammad200h/Hand/blob/main/doc/thumb.png?raw=true)" alt="Image 3" width="30%">
 </div>
 
-## Install my-project with npm
+## Install
 
 ```bash
     cd tiny_tf && pip3 install -e .
