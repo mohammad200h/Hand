@@ -1,6 +1,8 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
-setup(name='hand_multiprocessing',
-      version='0.0.1',
-      install_requires=['gym', 'numpy', 'pybullet']
+setup(
+    name='hand_multiprocessing',  # Ensure the correct name
+    version='0.0.1',
+    packages=find_packages(),  # Automatically includes all Python modules under the package
+    install_requires=['gym', 'numpy', 'pybullet'],  # Dependencies
 )

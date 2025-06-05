@@ -1,0 +1,38 @@
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: RF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::MF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: MF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: MF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::FF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: FF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: FF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: RF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::MF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: MF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: MF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::FF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: FF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: FF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: RF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::MF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::increment_success::finger_name:: MF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: MF ::goal_is_achived::True
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::FF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: FF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: FF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: RF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::MF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: MF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: MF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::FF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:RandomStart::reset_counter_becasue_of_failiur::finger_name:: FF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername:: FF ::goal_is_achived::False
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::RF
+DEBUG:fingers_multiprocessing.envs.fingerGymEnv:FingerGymEnv::reset::fingername::RF

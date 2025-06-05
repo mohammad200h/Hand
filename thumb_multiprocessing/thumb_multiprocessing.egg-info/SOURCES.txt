@@ -28,16 +28,8 @@ thumb_multiprocessing/envs/initial_env_setting/model/cube/launch_cube_model.py
 thumb_multiprocessing/envs/initial_env_setting/model/cube_visual/launch_cube_model.py
 thumb_multiprocessing/envs/model/__init__.py
 thumb_multiprocessing/envs/model/gym_gui_control.py
-thumb_multiprocessing/envs/model/gym_test.py
-thumb_multiprocessing/envs/model/gym_test1.py
-thumb_multiprocessing/envs/model/gym_test_joint.py
-thumb_multiprocessing/envs/model/gym_test_visual_collsion_contact.py
-thumb_multiprocessing/envs/model/kuka_handlitGymEnv.py
-thumb_multiprocessing/envs/model/kuka_handlit_controller.py
 thumb_multiprocessing/envs/model/launch_hand_model.py
 thumb_multiprocessing/envs/model/mamad_util.py
 thumb_multiprocessing/envs/model/modelGenerator.py
 thumb_multiprocessing/envs/model/modelInfo_util.py
 thumb_multiprocessing/envs/model/workspace_calculation_finger.py
-thumb_multiprocessing/envs/model/cube/launch_cube_model.py
-thumb_multiprocessing/envs/model/cube_visual/launch_cube_model.py

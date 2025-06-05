@@ -1342,7 +1342,13 @@ class ThumbGymEnv(gym.Env):
 
         self.perfromanceMeteric = PerformanceMetric(record_performance)
 
-    def reset(self):
+    def reset(self,seed=None, options=None):
+        if seed is not None:
+          # If you use any random numbers, seed them here, e.g.
+          import random
+          import numpy as np
+          random.seed(seed)
+          np.random.seed(seed)
         #resetting number of steps in an episode
         self.current_step = 0
 
@@ -1374,7 +1380,7 @@ class ThumbGymEnv(gym.Env):
         initla_state = self.getObservation()
    
 
-        return initla_state
+        return initla_state,{}
 
     def render(self):
       pass
@@ -1398,7 +1404,7 @@ class ThumbGymEnv(gym.Env):
         reward = self.reward(distance_from_fingertip_to_goal,goal_is_achived)
         done = self.termination(goal_is_achived)
 
-        return state,reward,done,{"action":action}
+        return state,reward,done,{"action":action},{}
 
     def getObservation(self):
        return self.obs_obj.get_state()

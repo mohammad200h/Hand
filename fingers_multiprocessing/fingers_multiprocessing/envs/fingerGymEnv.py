@@ -1526,7 +1526,15 @@ class FingerGymEnv(gym.Env):
         ###########setting up Reward###########
         self.reward_obj = Reward(reward_mode) 
 
-    def reset(self):
+    def reset(self,seed=None, options=None):
+
+
+        if seed is not None:
+          # If you use any random numbers, seed them here, e.g.
+          import random
+          import numpy as np
+          random.seed(seed)
+          np.random.seed(seed)
         
         #resetting number of steps in an episode
         self.current_step = 0
@@ -1566,7 +1574,7 @@ class FingerGymEnv(gym.Env):
 
         log.debug("FingerGymEnv::reset::fingername::{}".format(self.finger_name))
        
-        return initla_state
+        return initla_state,{}
 
     def step(self,action):
         finger_name = self.finger_mapping_for_performance_metric[self.finger_name]
@@ -1601,7 +1609,7 @@ class FingerGymEnv(gym.Env):
           print("\n\n")
         ####################################
 
-        return state,reward,done,{"action":action}
+        return state,reward,done,{"action":action},{}
 
     def render(self):
       pass
@@ -1680,4 +1688,12 @@ class FingerGymEnv(gym.Env):
       
       return False
         
- 
+
+
+
+#  from gym.envs.registration import register
+
+# register(
+#     id='MyEnv-v0',
+#     entry_point='my_env:MyEnv',
+# )
