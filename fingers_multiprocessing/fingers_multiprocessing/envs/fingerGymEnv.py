@@ -1421,7 +1421,7 @@ class Reward():
 
 class FingerGymEnv(gym.Env):
 
-    def __init__(self,renders=True,timeStep=1000,random_robot_start=False,
+    def __init__(self,renders=False,timeStep=1000,random_robot_start=False,
                  record_performance=False,obs_mode="finger_joints_and_distnace",
                  action_mode ="delta_jointControl",reward_mode="dense_distance",
                  adaptive_task_parameter_flag=False,atp_neighbour_radius=0.01,
