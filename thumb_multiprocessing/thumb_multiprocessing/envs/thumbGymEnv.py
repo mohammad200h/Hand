@@ -11,9 +11,9 @@ from pkg_resources import resource_string,resource_filename
 import time
 import random
 import math
-import gym
-from gym import spaces
-from gym.utils import seeding
+import gymnasium
+from gymnasium import spaces
+from gymnasium.utils import seeding
 import numpy as np
 
 import pybullet as p
@@ -1261,14 +1261,20 @@ class Reward():
 
 class ThumbGymEnv(gym.Env):
 
-    def __init__(self,renders=True,timeStep=2000,random_robot_start=False,
+    def __init__(self,renders=True,
+                 render_mode = None,
+                timeStep=2000,
+                max_episode_step = 200,
+                goal_threshold = 0.01,
+                random_robot_start=False,
                 record_performance=False,obs_mode="finger_joints_and_distnace",
                 action_mode ="IK",reward_mode="dense_distance",
-                adaptive_task_parameter_flag=False,atp_neighbour_radius=0.01,
+                adaptive_task_parameter_flag=True,
+                atp_neighbour_radius=0.01,
                 atp_num_success_required = 2,
                 atp_use_lower_limit=False,
                 atp_sphare_thinkness=0.005,
-                symitric_action = False,
+                symitric_action = True,
                 ):
 
         self._p = p 
@@ -1317,9 +1323,9 @@ class ThumbGymEnv(gym.Env):
 
 
         self.current_step = 0
-        self.max_episode_step = 2000 # an episode will terminate (end) if this number is reached
+        self.max_episode_step = max_episode_step # an episode will terminate (end) if this number is reached
 
-        self.threshold = 0.01 #the goal has been achievd if the distance between fingertip and goal is less than this
+        self.goal_threshold = goal_threshold #the goal has been achievd if the distance between fingertip and goal is less than this
 
         self.control_delay = 10 # this term contorls how often agent gets to interact with the enviornment
         ###########Workspace_Util###########
@@ -1404,7 +1410,10 @@ class ThumbGymEnv(gym.Env):
         reward = self.reward(distance_from_fingertip_to_goal,goal_is_achived)
         done = self.termination(goal_is_achived)
 
-        return state,reward,done,{"action":action},{}
+        truncated = self.current_step > self.max_episode_step and not done
+        info = {"action":action}
+        
+        return state, reward, done, truncated, info
 
     def getObservation(self):
        return self.obs_obj.get_state()
@@ -1457,7 +1466,7 @@ class ThumbGymEnv(gym.Env):
     def is_goal_achived(self,distance_from_fingertip_to_goal):
 
       dist_to_goal = distance_from_fingertip_to_goal
-      if dist_to_goal <0.001:
+      if dist_to_goal < self.goal_threshold :
         return True
       
       return False
