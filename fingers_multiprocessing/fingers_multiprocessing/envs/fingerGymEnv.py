@@ -1501,7 +1501,6 @@ class Reward():
 
 class FingerGymEnv(gymnasium.Env):
 
-<<<<<<< HEAD
     def __init__(self,renders=True,
                  render_mode = None,
                  timeStep=1000,
@@ -1509,9 +1508,6 @@ class FingerGymEnv(gymnasium.Env):
                  goal_threshold = 0.01,
                  learning_algorithem_uses_her = False,
                  random_robot_start=False,
-=======
-    def __init__(self,renders=False,timeStep=1000,random_robot_start=False,
->>>>>>> refs/remotes/origin/main
                  record_performance=False,obs_mode="finger_joints_and_distnace",
                  action_mode ="delta_jointControl",reward_mode="dense_distance",
                  adaptive_task_parameter_flag=True,

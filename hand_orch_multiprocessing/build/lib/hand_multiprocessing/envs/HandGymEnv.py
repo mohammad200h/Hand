@@ -1746,38 +1746,29 @@ class HandGymEnv(gym.Env):
         ###########setting up Reward###########
         self.reward_obj = Reward(reward_mode) 
         
-    def reset(self,goals:dict = None):
+    def reset(self):
         #resetting number of steps in an episode
         self.current_step = 0
         ###########getting random parameters for this episode###########
         joint_values=[]
         
-        ####fingers
+        ####fingers          
+  
         for finger_name in ["FF","MF","RF"]:
           if self.random_robot_start:
             joint_values += self.random_start_obj["fingers"].get_joint_values()
           else:
             joint_values += [0]*4
 
-          goal = None
-          if goals:
-            goal = goals[finger_name]
-          else:
-            goal = self.random_start_obj["fingers"].get_goal(finger_name)
-
+          goal = self.random_start_obj["fingers"].get_goal(finger_name)
           self.goals["locations"]["current"][finger_name] = goal
-        ##### thumb
+        ##### thumb 
         if self.random_robot_start:
           joint_values += self.random_start_obj["thumb"].get_joint_values()
         else:
           joint_values += [0]*4
 
-        goal = None
-        if goals:
-          goal = goals["TH"]
-        else:
-          goal = self.random_start_obj["thumb"].get_goal()
-
+        goal = self.random_start_obj["thumb"].get_goal()
         self.goals["locations"]["current"]["TH"] = goal
         ##############loading new and previous goal##################
         for finger_name in ["FF","MF","RF","TH"]: 
