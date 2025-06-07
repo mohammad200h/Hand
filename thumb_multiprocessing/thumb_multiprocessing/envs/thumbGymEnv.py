@@ -1261,12 +1261,16 @@ class Reward():
 
 class ThumbGymEnv(gym.Env):
 
+<<<<<<< HEAD
     def __init__(self,renders=True,
                  render_mode = None,
                 timeStep=2000,
                 max_episode_step = 200,
                 goal_threshold = 0.01,
                 random_robot_start=False,
+=======
+    def __init__(self,renders=False,timeStep=2000,random_robot_start=False,
+>>>>>>> refs/remotes/origin/main
                 record_performance=False,obs_mode="finger_joints_and_distnace",
                 action_mode ="IK",reward_mode="dense_distance",
                 adaptive_task_parameter_flag=True,
