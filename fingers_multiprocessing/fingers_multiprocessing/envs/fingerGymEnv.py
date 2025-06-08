@@ -54,7 +54,7 @@ the way we are going to design the action space for ik control
 The action space will be based on point cloud workspace generated for ff.
 if the finger is not ff, ff point cloud would be sampled but it will be shifted according to the biase.
 so the agent will work with an action sapce designed according to ff, regardlss of finger. However the agent
-action will be shifted according to the biase for each finger. 
+action will be shifted according to the biase for each finger.
 """
 
 
@@ -193,7 +193,7 @@ class AdaptiveTaskParameter():
     # print("get_a_goal_in_neighbourhood_of_current_goal::indexes:: ",indexes)
     # choose a candidate at random 
     candidate_index = random.choice(indexes)
-    candidate       = self.point_cloud[finger_name][candidate_index] 
+    candidate       = self.point_cloud[finger_name][candidate_index]
 
     return candidate
  
@@ -286,25 +286,25 @@ class AdaptiveTaskParameter():
 
   def get_a_goal_in_neighbourhood_of_current_goal_wthin_a_upper_and_lower_limit(self,finger_name):
      # find list of candidates
-    
+
     indexes  = self.get_neighbourhood_indexs_with_band(finger_name)
 
     # print("get_a_goal_in_neighbourhood_of_current_goal::indexes:: ",indexes)
-    # choose a candidate at random 
+    # choose a candidate at random
     candidate_index = random.choice(indexes)
-    candidate       = self.point_cloud[finger_name][candidate_index] 
+    candidate       = self.point_cloud[finger_name][candidate_index]
 
     return candidate
-  
+
   def common_member(self,a, b):
     a_set = set(a)
     b_set = set(b)
- 
+
     if (a_set & b_set):
         return list(a_set & b_set)
     else:
         return []
-    
+
 class RandomStart():
     def __init__(self,finger_obj,adaptive_task_parameter_flag=False,
                  atp_num_success_required=2,
@@ -315,7 +315,7 @@ class RandomStart():
         
         self.finger_list = ["FF","MF","RF"]
         self.last_finger_used = None 
-     
+
         self._action_limit = {
             #[knuckle,proximal,middle,distal]
             "high":[0.349066,1.5708,1.5708,1.5708],
@@ -332,18 +332,18 @@ class RandomStart():
                                           )
         else:
           self.BGG = BasicGoalGenerator()
-          
+
     def get_finger_name(self):
         """
         get a new finger position for this episode
         """
-        #Pop last from end and add it to front. choose the last in the list 
+        #Pop last from end and add it to front. choose the last in the list
         # print("get_finger_name::finger_list:: ",self.finger_list)
         finger_name = self.finger_list[-1]
         self.finger_list.pop()  #removing last element
         self.finger_list.insert(0,finger_name)
         # print("get_finger_name::finger_list:: ",self.finger_list)
-       
+
         return finger_name
 
     def get_joint_values(self):
@@ -387,9 +387,9 @@ class Workspace_Util():
          self.point_cloud = yaml.safe_load(stream)
       except yaml.YAMLError as exc:
           print(exc)
-   
+
     points  = np.array(self.point_cloud["vertix"])
-  
+
     self.x = points[:,0]
     self.y = points[:,1]
     self.z = points[:,2]
@@ -397,7 +397,7 @@ class Workspace_Util():
     self.ws_pointcould = {
       "ff":self.get_points_for_finger("ff"),
       "mf":self.get_points_for_finger("mf"),
-      "rf":self.get_points_for_finger("rf") 
+      "rf":self.get_points_for_finger("rf")
     }
    
   def get_max_min_xyz(self):
@@ -408,12 +408,12 @@ class Workspace_Util():
 
   def get_max_min_xyz_for_finger(self,finger_name):
     x,y,z = self.get_points_for_finger(finger_name)
-    
+
     max = [np.max(x),np.max(y),np.max(z)]
     min = [np.min(x),np.min(y),np.min(z)]
 
     return max,min
-  
+
   def get_points_for_finger(self,finger_name):
     point_cloud = None
     path = None
@@ -587,7 +587,7 @@ class PerformanceMetricVisulization():
 
     if self.render ==True:
       plt.show()
-   
+
 class PerformanceMetric():
   def __init__(self,record_performance=False):
 
@@ -598,8 +598,8 @@ class PerformanceMetric():
 
     self.perofrmance_log = {
       "episdoes":{# list of episdoe_perofrmance_log
-          "ff":[], 
-          "mf":[], 
+          "ff":[],
+          "mf":[],
           "rf":[]
          
       },
@@ -865,7 +865,7 @@ class PerformanceMetric():
   
 class Observation():
     def __init__(self,physic_engine,finger_obj,workspace_util,obs_mode ="finger_joints_and_distnace"):
-   
+
         self._p = physic_engine
         self.controller = finger_obj
         self.finger_name =None
@@ -883,7 +883,7 @@ class Observation():
         self.obs_mode =obs_mode
         self.observation_space = None
         self.dist_dic_max = self.get_dist_max()
-      
+
         self.goal_max , self.goal_min = self.get_max_min_goal_xyz()
 
         self.state_limit={
@@ -912,12 +912,12 @@ class Observation():
                "low":[0]
            },
            "goal":{
-              # THis is max x,y,z of the goal 
+              # THis is max x,y,z of the goal
               "high":self.goal_max,
               "low":self.goal_min
            },
            "fignertip":{
-              # THis is max x,y,z of the goal 
+              # THis is max x,y,z of the goal
               "high":self.goal_max,
               "low":self.goal_min
            },
@@ -944,7 +944,7 @@ class Observation():
         state = self.finger_comprehensive(history)
 
       return state
-    
+
     def set_obs_mode(self,mode):
       if self.obs_mode == "finger_joints_and_distnace":
         self.state_high = np.array(self.state_limit["joint"]["high"]+
@@ -1008,7 +1008,7 @@ class Observation():
     def set_configuration(self):
       self.set_obs_mode(self.obs_mode)
       return self.observation_space
-    
+
     # utility functions 
     def get_state_for_perfomance_metric(self):
       _,state_dic = self.finger_joints_and_distnace()
@@ -1071,14 +1071,14 @@ class Observation():
                       [chunk["finger_index"]],
                       dtype=np.float32
               )
-      
+
       return state
 
     def get_finger_tip_pos_in_world_frame(self):
         finger_tip_pos =  self.controller.get_observation_finger_tip()
 
         return finger_tip_pos
-    
+
     def get_distance_from_fingertip_to_goal(self):
         
         goal_pos = self.get_goal_pos()
@@ -1091,14 +1091,11 @@ class Observation():
 
         return dist
 
-    def get_joint_values(self):
-        return  self.controller.getObservation()
-
     def get_finger_index(self,finger_name):
         finger_list=["FF","MF","RF"]
-        
+
         return finger_list.index(finger_name)
-    
+
     def get_goal_pos(self):
         goal_state =  p.getBasePositionAndOrientation(self.goalId)
         pos = goal_state[0]
@@ -1122,11 +1119,11 @@ class Observation():
           }
       }
       return dist_dic_max
-    
+
     def get_max_min_goal_xyz(self):
       ff_ws_max, ff_ws_min = self.workspace_util.get_max_min_xyz_for_finger("ff")
       mf_ws_max, mf_ws_min = self.workspace_util.get_max_min_xyz_for_finger("mf")
-      
+
 
       print(f"get_max_min_goal_xyz::ff_ws_min::{ff_ws_min}")
       print(f"get_max_min_goal_xyz::mf_ws_max::{mf_ws_max}")
@@ -1269,7 +1266,7 @@ class Action():
 
       return processed_command
   
-  def process_IK(self,command,finger_name): 
+  def process_IK(self,command,finger_name):
     # print("process_IK::finger_name:: ",finger_name)
     processed_command = []
 
@@ -1295,8 +1292,8 @@ class Action():
 
 
 
-  
-  def process_delta_IK(self,delta_command,finger_name): 
+
+  def process_delta_IK(self,delta_command,finger_name):
     # print("process_delta_IK::finger_name:: ",finger_name)
     # print("process_delta_IK::ws_limit:: ",self._action_limit["ws"][finger_name])
 
@@ -1314,12 +1311,12 @@ class Action():
   # utility functions 
 
   def proccess_IK_General(self,command,finger_name):
-    # applying finger offset to command 
+    # applying finger offset to command
     processed_command = self.apply_command_offset(finger_name,command)
 
     # ee command to joint value command conversion 
     robot_id = self.controller_obj._robot_id
-    index_of_ee = self.get_index_of_ee(finger_name)  
+    index_of_ee = self.get_index_of_ee(finger_name)
 
 
     return self.get_ik_values_for_finger(finger_name,robot_id,index_of_ee,processed_command)
@@ -1327,7 +1324,7 @@ class Action():
   def apply_command_offset(self,finger_name,command):
     """
     is this nessessary?
-    The agent operate based on workspace on off the fingers. To be exact ff. Therefor the points it procudes for the ik 
+    The agent operate based on workspace on off the fingers. To be exact ff. Therefor the points it procudes for the ik
     will be base on that. If we are using a different finger then we need to shift the ik ee pose so that it is base on workspace
     for that finger
     """
@@ -1353,7 +1350,7 @@ class Action():
     elif finger_name == "rf":
       ee_name = "fingertip_RF"
     else:
-      # TODO: raise an error 
+      # TODO: raise an error
       print("wrong finger")
     
     return self.controller_obj.get_endEffectorLinkIndex(ee_name)
@@ -1365,14 +1362,14 @@ class Action():
 
     if finger_name =="ff":
       joint_command_for_finger = joint_commands_for_full_robot[:4]
-    elif finger_name =="mf": 
+    elif finger_name =="mf":
       joint_command_for_finger = joint_commands_for_full_robot[4:4*2]
-    elif finger_name =="rf": 
+    elif finger_name =="rf":
       joint_command_for_finger = joint_commands_for_full_robot[4*2:]
     else:
-      # TODO: raise an error 
+      # TODO: raise an error
       print("not the right finger")
-    
+
     return joint_command_for_finger
     
   def convertTo_non_symitric_action(self,action):
@@ -1501,7 +1498,6 @@ class Reward():
 
 class FingerGymEnv(gymnasium.Env):
 
-<<<<<<< HEAD
     def __init__(self,renders=True,
                  render_mode = None,
                  timeStep=1000,
@@ -1509,9 +1505,6 @@ class FingerGymEnv(gymnasium.Env):
                  goal_threshold = 0.01,
                  learning_algorithem_uses_her = False,
                  random_robot_start=False,
-=======
-    def __init__(self,renders=False,timeStep=1000,random_robot_start=False,
->>>>>>> refs/remotes/origin/main
                  record_performance=False,obs_mode="finger_joints_and_distnace",
                  action_mode ="delta_jointControl",reward_mode="dense_distance",
                  adaptive_task_parameter_flag=True,
@@ -1540,7 +1533,7 @@ class FingerGymEnv(gymnasium.Env):
         #objects that need to be set
         self.controller = None
         self.random_start = None
-       
+
         self.finger_name = None #current active finger
         self.goalId = None
         self.previous_goalId = None
@@ -1577,9 +1570,9 @@ class FingerGymEnv(gymnasium.Env):
                                         neighbour_radius=atp_neighbour_radius,
                                         atp_num_success_required = atp_num_success_required,
                                         atp_sphare_thinkness = atp_sphare_thinkness
-                                        
+
                                        )
-        #debug transformation 
+        #debug transformation
         if self.debug:
           from tf2_debug_ros import DebugTransformation
           self.debugTF = DebugTransformation(self._p,self.controller)
@@ -1598,11 +1591,10 @@ class FingerGymEnv(gymnasium.Env):
         self.control_delay = 5 # this term contorls how often agent gets to interact with the enviornment
         ###########Workspace_Util###########
         self.workspace_util = Workspace_Util()
-
         ########### HER ################
         self.learning_algorithem_uses_her = learning_algorithem_uses_her
         ###########setting up state space###########
-        
+
         self.obs_obj = Observation(self._p,self.controller,self.workspace_util,obs_mode=obs_mode)
         self.observation_space = self.obs_obj.set_configuration()
 
@@ -1616,7 +1608,7 @@ class FingerGymEnv(gymnasium.Env):
         print("self.observation_space.shape:: ",self.observation_space.shape)
         # sys.exit()
         ###########setting up action space###########
-        
+
         print("Intializing action")
         self.action_obj = Action(action_mode = self.action_mode,symitric_action = symitric_action,controller_obj = self.controller,workspace_util=self.workspace_util)
         self.action_space = self.action_obj.set_configuration()
@@ -1633,15 +1625,13 @@ class FingerGymEnv(gymnasium.Env):
         }
 
     def reset(self,seed=None, options=None):
-
-
         if seed is not None:
           # If you use any random numbers, seed them here, e.g.
           import random
           import numpy as np
           random.seed(seed)
           np.random.seed(seed)
-        
+
         #resetting number of steps in an episode
         self.current_step = 0
 
@@ -1673,7 +1663,7 @@ class FingerGymEnv(gymnasium.Env):
         self._p.stepSimulation()
 
         ############getting robot state##############
-      
+
         self.obs_obj.update_goal_and_finger_name(self.finger_name,self.goalId)
         initla_state = self.getObservation(self._hsitory)
         # print("initla_state::shape:: ",initla_state.shape)
@@ -1688,9 +1678,8 @@ class FingerGymEnv(gymnasium.Env):
           }
         else:
           obs = initla_state
-       
-        return obs,{}
 
+        return obs,{}
     def step(self,action):
         ############# Steping #################
         finger_name = self.finger_mapping_for_performance_metric[self.finger_name]
@@ -1699,15 +1688,13 @@ class FingerGymEnv(gymnasium.Env):
             self.controller.applyAction(command)
             self._p.stepSimulation()
 
-    
-
         self.current_step +=1
         ###########recording performance#################
         finger_name = self.finger_mapping_for_performance_metric[self.finger_name]
         self.perfromanceMeteric.performance_during_episode(self.obs_obj,finger_name,self.current_step)
         #################################################
 
-        
+
         distance_from_fingertip_to_goal = self.obs_obj.get_distance_from_fingertip_to_goal()
         goal_is_achived = self.is_goal_achived(distance_from_fingertip_to_goal)
 
@@ -1740,10 +1727,10 @@ class FingerGymEnv(gymnasium.Env):
           obs = state
         
         return obs, reward, done, truncated, info
-        
+
     def render(self):
       pass
-    
+
     def compute_reward(self, achieved_goal, desired_goal, info):
       return -np.linalg.norm(achieved_goal - desired_goal)
 
@@ -1751,17 +1738,17 @@ class FingerGymEnv(gymnasium.Env):
        return self.obs_obj.get_state(history)
 
     def reward(self,distance_from_fingertip_to_goal,goal_is_achived):
-   
+
        reward = self.reward_obj.get_reward(distance_from_fingertip_to_goal,goal_is_achived)
     
        return reward
-    
+
     def termination(self,goal_is_achived):
-        
+
         ###########recording performance#################
         finger_name = self.finger_mapping_for_performance_metric[self.finger_name]
         self.perfromanceMeteric.performance_at_end_of_episode(self.obs_obj,finger_name,goal_is_achived)
-                
+
         if self.current_step > self.max_episode_step or goal_is_achived : #episdoe will end
           ###############Adaptive task parameter###########
           if goal_is_achived:
@@ -1799,7 +1786,7 @@ class FingerGymEnv(gymnasium.Env):
         self._p.resetBasePositionAndOrientation(self.previous_goalId, goal,quaternion_angle)
       else:
         self._p.resetBasePositionAndOrientation(self.goalId, goal,quaternion_angle)  
-        
+
     def update_ws_for_finger(self):
         FF_offset = [0,0,0]
         MF_offset = [0.022,0.002536,0.003068]
@@ -1811,7 +1798,7 @@ class FingerGymEnv(gymnasium.Env):
             self._p.resetBasePositionAndOrientation(self.wsId, MF_offset,[0,0,0,1])
         elif self.finger_name =="RF":
             self._p.resetBasePositionAndOrientation(self.wsId, RF_offset,[0,0,0,1])
-        
+
     def is_goal_achived(self,distance_from_fingertip_to_goal):
 
       dist_to_goal = distance_from_fingertip_to_goal
@@ -1820,7 +1807,7 @@ class FingerGymEnv(gymnasium.Env):
         return True
       
       return False
-        
+
 
 
 

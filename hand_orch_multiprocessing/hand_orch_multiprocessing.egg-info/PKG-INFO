@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: hand_orch_multiprocessing
+Version: 0.0.1
+Requires-Dist: gym
+Requires-Dist: numpy
+Requires-Dist: pybullet
+Dynamic: requires-dist
