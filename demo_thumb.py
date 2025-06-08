@@ -1,15 +1,23 @@
-import gym
+import gymnasium as gym
+from gymnasium.envs.registration import register
+
+register(
+    id='thumb_multiprocessing-v0',
+    entry_point='thumb_multiprocessing.envs.thumbGymEnv:ThumbGymEnv',  # Replace with actual module and class path
+)
 import thumb_multiprocessing
 
 
 
 def random_agent(episodes=100):
 	env = gym.make("thumb_multiprocessing-v0",
+								obs_mode="comprehensive"
 	)
 	env.reset()
+	done =False
 	while(1):
 		
-		state,reward,done,_ = env.step(env.action_space.sample())
+		env.step(env.action_space.sample())
 		if done:
 			env.reset()
 

@@ -786,10 +786,14 @@ class Observation():
         self.TF = CoordinateFrameTrasform(self._p,self.controller)
 
 
-        self.obs_modes = ["finger_joints_and_distnace","finger_joint_and_dist_xyz","finger_joint_and_xyz"]
+        self.obs_modes = ["finger_joints_and_distnace","finger_joint_and_dist_xyz",
+                          "finger_joint_and_xyz",
+                          "comprehensive"]
         self.obs_mode =obs_mode
         self.observation_space = None
         self.dist_dic_max = self.get_dist_max()
+
+        self.goal_max , self.goal_min = self.get_max_min_goal_xyz()
 
         self.state_limit={
            "joint":{
@@ -810,13 +814,28 @@ class Observation():
            "xyz":{
             "high":self.ws_max,
             "low":self.ws_min
+           },
+           "goal":{
+              # THis is max x,y,z of the goal
+              "high":self.goal_max,
+              "low":self.goal_min
+           },
+           "fignertip":{
+              # THis is max x,y,z of the goal
+              "high":self.goal_max,
+              "low":self.goal_min
+           },
+           "history":{
+              # last_act + last_last_act : [knuckle,proximal,middle,distal]*2
+              "high":[1.0472, 1.22173, 0.698132, 1.5708]*2,
+              "low":[-1.0472, 0, -0.698132, 0]*2
            }
         }
 
     def update_goal_and_finger_name(self,goalId):
       self.goalId = goalId
 
-    def get_state(self):
+    def get_state(self,history:None):
       state =None
       if self.obs_mode == "finger_joints_and_distnace":
         state,_ = self.finger_joints_and_distnace()
@@ -824,6 +843,8 @@ class Observation():
         state = self.finger_joint_and_dist_xyz(self.goalId)
       elif self.obs_mode == "finger_joint_and_xyz":
         state = self.finger_joint_and_xyz(self.goalId)
+      elif self.obs_mode == "comprehensive":
+        state = self.finger_comprehensive(history)
 
       return state
    
@@ -860,6 +881,21 @@ class Observation():
                                    self.state_limit["xyz"]["low"]
                             
                                   ,dtype=np.float32
+                                  )
+      elif self.obs_mode == "comprehensive":
+        self.state_high = np.array(self.state_limit["joint"]["high"]+
+                                   self.state_limit["distance"]["high"]+
+                                   self.state_limit["goal"]["high"]+
+                                   self.state_limit["fignertip"]["high"]+
+                                   self.state_limit["history"]["high"]
+                                   ,dtype=np.float32
+                                  )
+        self.state_low = np.array(self.state_limit["joint"]["low"]+
+                                   self.state_limit["distance"]["low"]+
+                                   self.state_limit["goal"]["low"]+
+                                   self.state_limit["fignertip"]["low"]+
+                                   self.state_limit["history"]["low"]
+                                   ,dtype=np.float32
                                   )
       else:
         # TODO: rasie an error 
@@ -917,7 +953,29 @@ class Observation():
       state = np.array(state_dic["joints"]+state_dic["xyz"])
       # print("finger_joint_and_xyz::state:: ",state)
       return state
- 
+
+
+    def finger_comprehensive(self,history:dict):
+      _,chunk = self.finger_joints_and_distnace()
+      fingertip_pos = self.get_finger_tip_pos_in_world_frame()
+      goal = self.get_goal_pos()
+
+      state = np.array(chunk["joints"]+
+                      history["last_act"]+
+                      history["last_last_act"]+
+                      list(fingertip_pos)+
+                      list(goal)+
+                      [chunk["distance"]],
+                      dtype=np.float32
+              )
+
+      return state
+
+    def get_finger_tip_pos_in_world_frame(self):
+        finger_tip_pos =  self.controller.get_observation_finger_tip()
+
+        return finger_tip_pos
+
     def get_distance_from_fingertip_to_goal(self):
         
         goal_pos = self.get_goal_pos()
@@ -956,6 +1014,11 @@ class Observation():
           }
       }
       return dist_dic_max
+
+    def get_max_min_goal_xyz(self):
+      max_ws, min_ws = self.workspace_util.get_max_min_xyz()
+
+      return max_ws, min_ws
 
 class Action():
   """
@@ -1259,18 +1322,15 @@ class Reward():
 
     return reward 
 
-class ThumbGymEnv(gym.Env):
+class ThumbGymEnv(gymnasium.Env):
 
-<<<<<<< HEAD
     def __init__(self,renders=True,
                  render_mode = None,
                 timeStep=2000,
                 max_episode_step = 200,
                 goal_threshold = 0.01,
+                learning_algorithem_uses_her = False,
                 random_robot_start=False,
-=======
-    def __init__(self,renders=False,timeStep=2000,random_robot_start=False,
->>>>>>> refs/remotes/origin/main
                 record_performance=False,obs_mode="finger_joints_and_distnace",
                 action_mode ="IK",reward_mode="dense_distance",
                 adaptive_task_parameter_flag=True,
@@ -1334,6 +1394,8 @@ class ThumbGymEnv(gym.Env):
         self.control_delay = 10 # this term contorls how often agent gets to interact with the enviornment
         ###########Workspace_Util###########
         self.workspace_util = Workspace_Util()
+        ########### HER ################
+        self.learning_algorithem_uses_her = learning_algorithem_uses_her
         ###########setting up state space###########
         self.obs_obj = Observation(self._p,self.controller,self.workspace_util,obs_mode=obs_mode)
         self.observation_space = self.obs_obj.set_configuration()
@@ -1349,8 +1411,12 @@ class ThumbGymEnv(gym.Env):
         ###########setting up Reward###########
         self.reward_obj = Reward(reward_mode) 
         ###########setting up perfromanceMeteric###########
-
         self.perfromanceMeteric = PerformanceMetric(record_performance)
+        ########### History ################
+        self._hsitory = {
+          "last_act":[0]*4,
+          "last_last_act":[0]*4
+        }
 
     def reset(self,seed=None, options=None):
         if seed is not None:
@@ -1396,13 +1462,13 @@ class ThumbGymEnv(gym.Env):
       pass
     
     def step(self,action):
+        ############# Steping #################
         command = self.action_obj.process_action(action) 
         for i in range(self.control_delay):
             self.controller.applyAction(command)
             p.stepSimulation()
 
         self.current_step +=1
-
         ###########recording performance#################
         self.perfromanceMeteric.performance_during_episode(self._observation,self.current_step)
         #################################################
@@ -1414,13 +1480,31 @@ class ThumbGymEnv(gym.Env):
         reward = self.reward(distance_from_fingertip_to_goal,goal_is_achived)
         done = self.termination(goal_is_achived)
 
+        ############## history ###########
+        self._hsitory["last_last_act"] = self._hsitory["last_act"]
+        self._hsitory["last_act"] =self.obs_obj.get_joint_values()
+        ###########Debug TF Using ROS RVIZ#################
+
         truncated = self.current_step > self.max_episode_step and not done
         info = {"action":action}
+
+        ####################################
+        if self.learning_algorithem_uses_her:
+          obs = {
+            "observation":state,
+            "desired_goal":self.goal[self.finger_name],
+            "achieved_goal": self.obs_obj.get_finger_tip_pos_in_world_frame()
+          }
+        else:
+          obs = state
         
-        return state, reward, done, truncated, info
+        return obs, reward, done, truncated, info
+
+    def compute_reward(self, achieved_goal, desired_goal, info):
+      return -np.linalg.norm(achieved_goal - desired_goal)
 
     def getObservation(self):
-       return self.obs_obj.get_state()
+       return self.obs_obj.get_state(self._hsitory)
 
     def reward(self,distance_from_fingertip_to_goal,goal_is_achived):
      

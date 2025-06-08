@@ -1,1 +1,1 @@
-from hand_multiprocessing.envs.HandGymEnv import *
+from hand_orch_multiprocessing.envs.HandGymEnvOrchestrator import *

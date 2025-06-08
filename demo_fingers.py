@@ -22,7 +22,5 @@ def random_agent(episodes=100):
 		if done:
 			env.reset()
 
-	
-
 if __name__ == "__main__":
     random_agent()
