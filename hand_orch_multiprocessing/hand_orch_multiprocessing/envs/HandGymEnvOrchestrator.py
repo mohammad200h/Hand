@@ -11,7 +11,7 @@ from thumb_multiprocessing.envs.thumbGymEnv import Workspace_Util as  ThumbWorks
 
 
 class HandGymEnvOrchestrator(gymnasium.Env):
-  def __init__(self, thumb_agent,fingers_agent,
+  def __init__(self,thumb_agent,fingers_agent,
                num_envs,hand_env_config,
                log_dir,
                success_threshold = 0.01):
@@ -128,34 +128,43 @@ class HandGymEnvOrchestrator(gymnasium.Env):
           np.random.seed(seed)
     #TODO: choose a random main goal
     self.current_step =  np.full((2, 1), 0)
-    obs = self._env.reset()
-    return obs, {}
+    minions_state = self._env.reset()
+    state, state_dict = self.get_observation(minions_state)
+    return state, {}
 
   def step(self,action):
     self.current_step[:] +=1
-    # print(f"current_step::{self.current_step}")
     # every step the orchestrator produces and intermediate goal so
     # that the hand reaches the final goal through intermediate goals
 
-    # set_intermediate_goal
     # Set intermediate goal based on the action
     for i in range(self._num_envs):
       self._env.env_method("set_goal_location",action[i,:],indices=i)
-    obs = self._env.reset()
+    minions_state = self._env.reset()
 
 
     # wait 200 steps for the agent to reach the goal
     minions_done = np.array([False]* self._num_envs)
-    counter = 0
     while not minions_done.all():
       actions = []
+      obs_dict = {
+       "FF":minions_state[:,:20],
+       "MF":minions_state[:,20:40],
+       "RF":minions_state[:,40:60],
+       "TH":minions_state[:,60:]
+      }
+
+      
       for finger in ["FF","MF","RF"]:
-        finger_obs =None
-        finger_action = self._fingers_agent(finger_obs)
+        finger_action = self._fingers_agent(obs_dict[finger])
+        print(f"HandGymEnvOrchestrator::finger_action::{finger_action}")
         actions += finger_action
 
-      thumb_obs = None
-      th_action = self._thumb_agent(thumb_obs)
+      th_action = self._thumb_agent(obs_dict["TH"])
+      print(f"HandGymEnvOrchestrator::type::{type(th_action)}")
+      print(f"HandGymEnvOrchestrator::th_action::shape::{th_action.shape}")
+      print(f"HandGymEnvOrchestrator::th_action::{th_action}")
+
       actions += th_action
 
       # print(f"HandGymEnvOrchestrator::step::actions::{actions}")
@@ -166,11 +175,8 @@ class HandGymEnvOrchestrator(gymnasium.Env):
       # print(f"minions_done::{minions_done}")
       # print(f"minions_done::type::{type(minions_done)}")
 
-      # remove later
 
-      if counter == 1:
-        minions_done = np.array([True]* self._num_envs)
-      counter +=1
+  
 
     state, state_dict = self.get_observation(minions_state)
     reward = self.get_reward(state_dict)

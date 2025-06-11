@@ -5,7 +5,7 @@ hand_orch_multiprocessing.egg-info/SOURCES.txt
 hand_orch_multiprocessing.egg-info/dependency_links.txt
 hand_orch_multiprocessing.egg-info/requires.txt
 hand_orch_multiprocessing.egg-info/top_level.txt
-hand_orch_multiprocessing/envs/HandGymEnv.py
+hand_orch_multiprocessing/envs/HandGymEnvOrchestrator.py
 hand_orch_multiprocessing/envs/__init__.py
 hand_orch_multiprocessing/envs/mamad_util.py
 hand_orch_multiprocessing/envs/tf_independednt_of_parameter.py
