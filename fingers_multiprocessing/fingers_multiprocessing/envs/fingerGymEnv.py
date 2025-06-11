@@ -1137,7 +1137,6 @@ class Observation():
 
       return max_ws.tolist(), min_ws.tolist()
 
-
 class Action():
   """
   All the action processing will be done here in order 

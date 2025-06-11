@@ -36,11 +36,9 @@ import matplotlib
 from tf_independednt_of_parameter import CoordinateFrameTrasform
 
 
-
-
 from fingers_multiprocessing.envs.fingerGymEnv import Workspace_Util as  FingerWorkspace_Util
 from fingers_multiprocessing.envs.fingerGymEnv import Observation as  FingersObservationBase
-from fingers_multiprocessing.envs.fingerGymEnv import Action as  FingersAction
+from fingers_multiprocessing.envs.fingerGymEnv import Action as  FingersActionBase
 from fingers_multiprocessing.envs.fingerGymEnv import BasicGoalGenerator as  FingersBasicGoalGenerator
 from fingers_multiprocessing.envs.fingerGymEnv import AdaptiveTaskParameter as  FingersAdaptiveTaskParameter
 from fingers_multiprocessing.envs.fingerGymEnv import RandomStart as  FingersRandomStart
@@ -49,7 +47,7 @@ from fingers_multiprocessing.envs.fingerGymEnv import RandomStart as  FingersRan
 
 from thumb_multiprocessing.envs.thumbGymEnv import Workspace_Util as  ThumbWorkspace_Util
 from thumb_multiprocessing.envs.thumbGymEnv import Observation as  ThumbObservationBase
-from thumb_multiprocessing.envs.thumbGymEnv import Action as  ThumbAction
+from thumb_multiprocessing.envs.thumbGymEnv import Action as  ThumbActionBase
 from thumb_multiprocessing.envs.thumbGymEnv import BasicGoalGenerator as  ThumbBasicGoalGenerator
 from thumb_multiprocessing.envs.thumbGymEnv import AdaptiveTaskParameter as  ThumbAdaptiveTaskParameter
 from thumb_multiprocessing.envs.thumbGymEnv import RandomStart as  ThumbRandomStart
@@ -76,6 +74,7 @@ class FingersObservation(FingersObservationBase):
         return dist
   def get_finger_tip_pos_in_world_frame(self):
       finger_tip_pos =  self.controller.get_observation_finger_tip(self.finger_name)
+      # print(f"FingersObservation::finger_name::{self.finger_name}::finger_tip_pos::{finger_tip_pos}")
       return finger_tip_pos
 
 class ThumbObservation(ThumbObservationBase):
@@ -102,6 +101,18 @@ class ThumbObservation(ThumbObservationBase):
   def get_finger_tip_pos_in_world_frame(self):
       finger_tip_pos =  self.controller.get_observation_finger_tip("TH")
       return finger_tip_pos
+
+class FingersAction(FingersActionBase):
+  def __init__(self,action_mode,symitric_action,controller_obj,workspace_util):
+    super().__init__(action_mode,symitric_action,controller_obj,workspace_util)
+
+  def get_current_state_of_joints(self):
+    return self.controller_obj.getObservation()
+class ThumbAction(ThumbActionBase):
+  def __init__(self,action_mode,symitric_action,controller_obj):
+    super().__init__(action_mode,symitric_action,controller_obj)
+  def get_current_state_of_joints(self):
+    return self.controller_obj.getObservation()
 
 class Reward():
   def __init__(self,reward_mode="dense_distance"):
@@ -151,7 +162,6 @@ class Reward():
 
     return reward 
 
-
 class HandGymEnv(gymnasium.Env):
     
     def __init__(self,renders=True,
@@ -165,12 +175,15 @@ class HandGymEnv(gymnasium.Env):
                  atp_use_lower_limit=False,
                  atp_sphare_thinkness=0.005,
                  symitric_action = False,
+                 orchestrator_mode = False,
                  debug=False
                 ):
         self._p = p 
         self._render = renders
         self._timeStep = 1/timeStep
         self.debug = debug
+
+        self._orchestrator_mode = orchestrator_mode
 
         self.action_mode = action_mode
         self.random_robot_start = random_robot_start
@@ -347,10 +360,6 @@ class HandGymEnv(gymnasium.Env):
         }
         
     def reset(self,seed=None,options=None):
-        goals:dict = None
-        if options and "goals" in options:
-          goals = options["goals"]
-
         if seed is not None:
           # If you use any random numbers, seed them here, e.g.
           import random
@@ -369,38 +378,31 @@ class HandGymEnv(gymnasium.Env):
           else:
             joint_values += [0]*4
 
-          goal = None
-          if goals:
-            goal = goals[finger_name]
-          else:
+          if not self._orchestrator_mode:
             goal = self.random_start_obj["fingers"].get_goal(finger_name)
-
-          self.goals["locations"]["current"][finger_name] = goal
+            self.goals["locations"]["current"][finger_name] = goal
         ##### thumb
         if self.random_robot_start:
           joint_values += self.random_start_obj["thumb"].get_joint_values()
         else:
           joint_values += [0]*4
 
-        goal = None
-        if goals:
-          goal = goals["TH"]
-        else:
+        if not self._orchestrator_mode:
           goal = self.random_start_obj["thumb"].get_goal()
-
-        self.goals["locations"]["current"]["TH"] = goal
+          self.goals["locations"]["current"]["TH"] = goal
         ##############loading new and previous goal##################
-        for finger_name in ["FF","MF","RF","TH"]: 
-          self.change_goal_location(finger_name)
+        if not self._orchestrator_mode:
+          for finger_name in ["FF","MF","RF","TH"]:
+            self.change_goal_location(finger_name)
 
-          goal_has_chaned = self.goals["locations"]["current"][finger_name] != self.goals["locations"]["previous"][finger_name]
- 
-          if goal_has_chaned:
-            if self.goals["locations"]["previous"][finger_name] ==None:
+            goal_has_chaned = self.goals["locations"]["current"][finger_name] != self.goals["locations"]["previous"][finger_name]
+
+            if goal_has_chaned:
+              if self.goals["locations"]["previous"][finger_name] ==None:
+                self.goals["locations"]["previous"][finger_name] = self.goals["locations"]["current"][finger_name]
+
+              self.change_goal_location(finger_name,True)
               self.goals["locations"]["previous"][finger_name] = self.goals["locations"]["current"][finger_name]
-            
-            self.change_goal_location(finger_name,True)
-            self.goals["locations"]["previous"][finger_name] = self.goals["locations"]["current"][finger_name]
 
              
         ############resetting the robot at the begining of each episode#######
@@ -412,9 +414,11 @@ class HandGymEnv(gymnasium.Env):
         return initla_state, {}
 
     def step(self,action):
+      action = list(action)
 
-      print(f"HandGymEnv::action::{action}")
-      print(f"HandGymEnv::action::shape::{action.shape}")
+      # print(f"HandGymEnv::action::type::{type(action)}")
+      # print(f"HandGymEnv::action::{action}")
+      # print(f"HandGymEnv::action::shape::{len(action)}")
 
       # print("step::action::len:: ",len(action))
       # print("step::action:: ",action)
@@ -471,24 +475,30 @@ class HandGymEnv(gymnasium.Env):
       goal_is_achived = self.is_goal_achived(distance_from_fingertip_to_goal)
 
       ##### observation #####
-      state = self.getObservation()
+      obs = self.getObservation()
       ##### termination ####
       done = self.termination(goal_is_achived)
+      truncated = self.current_step > self.max_episode_step and not done
       #### reward #####
       reward,_ = self.reward(distance_from_fingertip_to_goal,goal_is_achived)
 
 
       ############## history ###########
-      joints_value = self.controller.getObservation_joint(format="dictinary")
-      print(f"joints_value::{joints_value}")
+
       for finger_name in ["FF","MF","RF","TH"]:
         if finger_name == "TH":
           self.obs_obj["thumb"].update_goal_and_finger_name(self.goals["ids"]["current"]["TH"])
-        self.obs_obj["fingers"].update_goal_and_finger_name(finger_name,self.goals["ids"]["current"][finger_name])
-        self._history["last_last_act"][finger_name] = self._history["last_act"][finger_name]
-        self._history["last_act"][finger_name] = joints_value[finger_name]
+          self._history["last_act"][finger_name] =  self.obs_obj["thumb"].get_joint_values()
+          self._history["last_last_act"][finger_name] = self._history["last_act"][finger_name]
+          continue
 
-      return state,reward,done,{}
+        self.obs_obj["fingers"].update_goal_and_finger_name(finger_name,self.goals["ids"]["current"][finger_name])
+        self._history["last_act"][finger_name] =  self.obs_obj["fingers"].get_joint_values()
+        self._history["last_last_act"][finger_name] = self._history["last_act"][finger_name]
+
+      info = {"action":action}
+
+      return obs, reward, done, truncated, info
 
     def render(self):
       pass
@@ -528,7 +538,14 @@ class HandGymEnv(gymnasium.Env):
       # print("getObservation::obs_dic[thumb]::type:: ",type(obs_dic["thumb"]))
       # print("\n\n")
 
+
+      # print(f"obs_dic[fingers][FF]::{obs_dic['fingers']['FF']}")
+      # print(f"obs_dic[fingers][FF]::tolist{obs_dic['fingers']['FF'].tolist()}")
+      # print(f"obs_dic[fingers][MF]::{obs_dic['fingers']['MF']}")
+
+
       obs = obs_dic["fingers"]["FF"].tolist()+obs_dic["fingers"]["MF"].tolist()+obs_dic["fingers"]["RF"].tolist()+obs_dic["thumb"].tolist()
+
       obs = np.array(obs)
       # print("\n\n")
       # print("getObservation::oba::shape",obs.shape)
@@ -584,10 +601,7 @@ class HandGymEnv(gymnasium.Env):
       
       return False 
     
-    
     ########utility function#########
-
-
     def load_scene(self):
       ####### load floor #########
       urdfRoot=pybullet_data.getDataPath()
@@ -616,6 +630,24 @@ class HandGymEnv(gymnasium.Env):
         goalId =  self.goals["ids"]["current"][finger_name]
         goal_loc = self.goals["locations"]["current"][finger_name]
         self._p.resetBasePositionAndOrientation(goalId, goal_loc,quaternion_angle)  
+
+    def set_goal_location(self, goals:np.array):
+      # print(f"HandGymEnv::set_goal_location::type::{type(goals)}")
+      # print(f"HandGymEnv::set_goal_location::shape::{goals.shape}")
+      # print(f"HandGymEnv::set_goal_location::goals::{goals}")
+      goals_dic = {
+        "FF":goals[:3],
+        "MF":goals[3:6],
+        "RF":goals[6:9],
+        "TH":goals[9:]
+      }
+      euler_angle = [0,0,0]
+      quaternion_angle = self._p.getQuaternionFromEuler(euler_angle)
+      for finger_name in ["FF","MF","RF","TH"]:
+        goalId =  self.goals["ids"]["current"][finger_name]
+        goal_loc = goals_dic[finger_name]
+        self._p.resetBasePositionAndOrientation(goalId, goal_loc,quaternion_angle)
+
 
 
     def is_goal_achived(self,distance_from_fingertip_to_goal):

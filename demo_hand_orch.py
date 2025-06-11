@@ -34,7 +34,9 @@ def random_agent(episodes=100):
       "fingers":"comprehensive",
       "thumb":"comprehensive"
     },
-		"renders":False
+		"action_mode":"jointControl",
+		"renders":False,
+		"orchestrator_mode": True
   }
 	env = gym.make("hand_orch_multiprocessing-v0",
 								thumb_agent = thumb_action,
@@ -43,24 +45,24 @@ def random_agent(episodes=100):
 								hand_env_config=hand_env_config,
 								log_dir ="."
 								)
-	done = False
+	done = np.full((2, 1), False)
 	obs,info = env.reset()
-	print(f"rest::obs::shape::{obs.shape}")
-	print(f"rest::obs::{obs}")
+	# print(f"rest::obs::shape::{obs.shape}")
+	# print(f"rest::obs::{obs}")
 
-	while(1):
+	while done.all:
 		action = env.action_space.sample()
-		print(f"action::type::{type(action)}")
-		print(f"action::{action}")
+		# print(f"action::type::{type(action)}")
+		# print(f"action::{action}")
 		vec_action = np.vstack([action, action.copy()])
-		print(f"vec_action::shape::{vec_action.shape}")
-		print(f"vec_action::{vec_action}")
+		# print(f"vec_action::shape::{vec_action.shape}")
+		# print(f"vec_action::{vec_action}")
 
-		env.step(vec_action)
-		if done:
+		obs, reward, done, truncated, info = env.step(vec_action)
+
+		if done.all():
+			print(f"its done....")
 			env.reset()
-
-	
 
 if __name__ == "__main__":
     random_agent()
