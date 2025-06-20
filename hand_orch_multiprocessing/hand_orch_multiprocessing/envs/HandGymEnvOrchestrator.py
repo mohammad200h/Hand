@@ -16,7 +16,6 @@ from thumb_multiprocessing.envs.thumbGymEnv import BasicGoalGenerator as  ThumbB
 class HandGymEnvOrchestrator(gymnasium.Env):
   def __init__(self,thumb_agent,fingers_agent,
                hand_env_config,
-               log_dir,
                success_threshold = 0.01):
     self._thumb_agent = thumb_agent
     self._fingers_agent = fingers_agent
@@ -38,11 +37,18 @@ class HandGymEnvOrchestrator(gymnasium.Env):
     self.fingers_ws = FingerWorkspace_Util()
     ###########setting up state space###########
     self.delta = 0.05
-    ff_ws_max,ff_ws_min = self.fingers_ws.get_max_min_xyz_for_finger("ff")
-    mf_ws_max,mf_ws_min = self.fingers_ws.get_max_min_xyz_for_finger("mf")
-    rf_ws_max,rf_ws_min = self.fingers_ws.get_max_min_xyz_for_finger("rf")
-    th_ws_max,th_ws_min = self.th_ws.get_max_min_xyz()
+    self.ff_ws_max,ff_ws_min = self.fingers_ws.get_max_min_xyz_for_finger("ff")
+    self.mf_ws_max,mf_ws_min = self.fingers_ws.get_max_min_xyz_for_finger("mf")
+    self.rf_ws_max,rf_ws_min = self.fingers_ws.get_max_min_xyz_for_finger("rf")
+    self.th_ws_max,th_ws_min = self.th_ws.get_max_min_xyz()
 
+    self.current_goal_pos = np.array(self.ff_ws_max + self.mf_ws_max + self.rf_ws_max + self.th_ws_max)
+    self.ws_max =  np.array(self.ff_ws_max + self.mf_ws_max + self.rf_ws_max + self.th_ws_max)
+    self.ws_min =  np.array(ff_ws_min + mf_ws_min + rf_ws_min + th_ws_min)
+
+
+
+    print(f"HandGymEnvOrchestrator::current_goal_pos::{self.current_goal_pos}" )
     # TODO: actually sample workspace#
     self._fingers_goal_generator = FingerBasicGoalGenerator()
     self._thumb_goal_generator = ThumbBasicGoalGenerator()
@@ -55,36 +61,40 @@ class HandGymEnvOrchestrator(gymnasium.Env):
 
     self.state_limit = {
       "ff_goal":{
-        "high":ff_ws_max,
+        "high":self.ff_ws_max,
         "low":ff_ws_min
       },
       "ff_fingertip":{
-        "high":ff_ws_max,
+        "high":self.ff_ws_max,
         "low":ff_ws_min
       },
       "mf_goal":{
-        "high":mf_ws_max,
+        "high":self.mf_ws_max,
         "low":mf_ws_min
       },
       "mf_fingertip":{
-        "high":mf_ws_max,
+        "high":self.mf_ws_max,
         "low":mf_ws_min
       },
       "rf_goal":{
-        "high":rf_ws_max,
+        "high":self.rf_ws_max,
         "low":rf_ws_min
       },
       "rf_fingertip":{
-        "high":rf_ws_max,
+        "high":self.rf_ws_max,
         "low":rf_ws_min
       },
       "th_goal":{
-        "high":th_ws_max,
+        "high":self.th_ws_max,
         "low":th_ws_min
       },
       "th_fingertip":{
-        "high":th_ws_max,
+        "high":self.th_ws_max,
         "low":th_ws_min
+      },
+      "dist":{
+        "high":[0.2]*4,
+        "low": [0]*4
       },
       "history":{
         "high":None,
@@ -92,7 +102,7 @@ class HandGymEnvOrchestrator(gymnasium.Env):
       }
     }
     #last_act last_last_act
-    history_high = ff_ws_max+mf_ws_max+rf_ws_max+th_ws_max
+    history_high = self.ff_ws_max+self.mf_ws_max+self.rf_ws_max+self.th_ws_max
     history_high = history_high + history_high
 
     history_low = ff_ws_min+mf_ws_min+rf_ws_min+th_ws_min
@@ -103,13 +113,38 @@ class HandGymEnvOrchestrator(gymnasium.Env):
 
 
     self.obs_high = np.array(
+      # Main goal
       self.state_limit["ff_goal"]["high"] +  self.state_limit["mf_goal"]["high"] +
       self.state_limit["rf_goal"]["high"] +  self.state_limit["th_goal"]["high"] +
+      # Current goal
+      self.state_limit["ff_goal"]["high"] +  self.state_limit["mf_goal"]["high"] +
+      self.state_limit["rf_goal"]["high"] +  self.state_limit["th_goal"]["high"] +
+      # Fingertip  pose
+      self.state_limit["ff_fingertip"]["high"] +  self.state_limit["mf_fingertip"]["high"] +
+      self.state_limit["rf_fingertip"]["high"] +  self.state_limit["th_fingertip"]["high"] +
+      # Distance from current goal to main goal
+      self.state_limit["dist"]["high"] +
+      # Distance from fingertip to  current goal
+      self.state_limit["dist"]["high"] +
+      # history of goals for last and last_last_act
       self.state_limit["history"]["high"]
       ,dtype=np.float32)
+
     self.obs_low = np.array(
+      # Main goal
       self.state_limit["ff_goal"]["low"] +  self.state_limit["mf_goal"]["low"] +
       self.state_limit["rf_goal"]["low"] +  self.state_limit["th_goal"]["low"] +
+      # Current goal
+      self.state_limit["ff_goal"]["low"] +  self.state_limit["mf_goal"]["low"] +
+      self.state_limit["rf_goal"]["low"] +  self.state_limit["th_goal"]["low"] +
+      # Fingertip  pose
+      self.state_limit["ff_fingertip"]["low"] +  self.state_limit["mf_fingertip"]["low"] +
+      self.state_limit["rf_fingertip"]["low"] +  self.state_limit["th_fingertip"]["low"] +
+      # Distance from current goal to main goal
+      self.state_limit["dist"]["low"] +
+      # Distance from fingertip to  current goal
+      self.state_limit["dist"]["low"] +
+      # history of goals for last and last_last_act
       self.state_limit["history"]["low"]
       ,dtype=np.float32)
     self.observation_space =  spaces.Box(self.obs_low, self.obs_high)
@@ -118,6 +153,12 @@ class HandGymEnvOrchestrator(gymnasium.Env):
     self.action_space = spaces.Box(np.array([-self.delta]*12,dtype=np.float32),
                                    np.array([self.delta]*12,dtype=np.float32)
     )
+    ########## History ############
+    self._history = {
+      "last_act":[0]*12,
+      "last_last_act":[0]*12
+    }
+
     self.seed = None
 
   def reset(self,seed=None, options=None):
@@ -127,20 +168,37 @@ class HandGymEnvOrchestrator(gymnasium.Env):
           import random
           random.seed(seed)
           np.random.seed(seed)
-    #TODO: choose a random main goal
+
+    self.current_goal_pos = np.array(self.ff_ws_max + self.mf_ws_max + self.rf_ws_max + self.th_ws_max)
+    self._goals = {
+      "FF":self._fingers_goal_generator.get_goal("FF") ,
+      "MF":self._fingers_goal_generator.get_goal("MF") ,
+      "RF":self._fingers_goal_generator.get_goal("RF") ,
+      "TH":self._thumb_goal_generator.get_goal()
+    }
+
+
+    self._history = {
+      "last_act":[0]*12,
+      "last_last_act":[0]*12
+    }
     self.current_step = 0
+    self._env.unwrapped.set_goal_location(self.current_goal_pos)
     minion_state,info = self._env.reset()
-    state, state_dict = self.get_observation(minion_state)
+    state, state_dict = self.get_observation(minion_state, self._history)
+
     return state, {}
 
   def step(self,action):
-    self.current_step[:] +=1
+    self.current_step +=1
     # every step the orchestrator produces and intermediate goal so
     # that the hand reaches the final goal through intermediate goals
+    self.current_goal_pos += action
+    clipped_action = np.clip(self.current_goal_pos, self.ws_min, self.ws_max)
+    self.current_goal_pos = clipped_action
 
     # Set intermediate goal based on the action
-    for i in range(self._num_envs):
-      self._env.env_method("set_goal_location",action[i,:],indices=i)
+    self._env.unwrapped.set_goal_location(clipped_action)
     minions_state,info = self._env.reset()
 
 
@@ -158,36 +216,25 @@ class HandGymEnvOrchestrator(gymnasium.Env):
       
       for finger in ["FF","MF","RF"]:
         finger_action = self._fingers_agent(obs_dict[finger])
-        print(f"HandGymEnvOrchestrator::finger_action::{finger_action}")
-        actions += finger_action
+        actions += finger_action.tolist()
 
       th_action = self._thumb_agent(obs_dict["TH"])
-      print(f"HandGymEnvOrchestrator::type::{type(th_action)}")
-      print(f"HandGymEnvOrchestrator::th_action::shape::{th_action.shape}")
-      print(f"HandGymEnvOrchestrator::th_action::{th_action}")
 
-      actions += th_action
-      # print(f"HandGymEnvOrchestrator::step::vec_action::{vec_action}")
+      actions += th_action.tolist()
 
-      minions_state,minions_reward, minions_done, minions_truncated = self._env.step(actions)
-      # print(f"minions_done::{minions_done}")
-      # print(f"minions_done::type::{type(minions_done)}")
+      minions_state,minions_reward, minions_done, _, _ = self._env.step(actions)
 
-
+    self._history["last_last_act"] = self._history["last_act"]
+    self._history["last_act"] = clipped_action.tolist()
   
-
-    state, state_dict = self.get_observation(minions_state)
+    state, state_dict = self.get_observation(minions_state, self._history)
     reward = self.get_reward(state_dict)
     done = self.get_termination(state_dict)
     info = {}
 
-    # print(f"reward::shape::{reward.shape}")
-
     truncated = self.current_step  > self.max_episode_step
 
-    # print(f"minions_state::{minions_state}")
-    # print(f"minions_state::shape::{minions_state.shape}")
-    return obs, reward, done, truncated, info
+    return state, reward, done, truncated, info
 
     # calculate reward by working out distance between current intermediate goal and final goal
 
@@ -200,14 +247,12 @@ class HandGymEnvOrchestrator(gymnasium.Env):
     # do this with numpy
     dists = state_dict["dist_from_current_goal_to_main_goal"]
 
-    termination_flags = dists < self._success_threshold
+    termination_flags = np.array(dists) < self._success_threshold
     reached_max_episode = self.current_step  > self.max_episode_step
 
-    return termination_flags | reached_max_episode
+    return termination_flags.all() | reached_max_episode
 
-  def get_observation(self,minions_state):
-    print(f"HandGymEnvOrchestrator::get_observation::minions_state::type::{type(minions_state)}")
-    print(f"HandGymEnvOrchestrator::get_observation::minions_state::{minions_state}")
+  def get_observation(self,minions_state, history):
     FF_obs = minions_state[:20]
     MF_obs = minions_state[20:40]
     RF_obs = minions_state[40:60]
@@ -222,8 +267,6 @@ class HandGymEnvOrchestrator(gymnasium.Env):
     MF_current_goal = MF_obs[15:18]
     RF_current_goal = RF_obs[15:18]
     TH_current_goal = TH_obs[15:18]
-    print(f"HandGymEnvOrchestrator::get_observation::FF_finger_pos::{FF_finger_pos}")
-    print(f"HandGymEnvOrchestrator::get_observation::FF_finger_pos::{FF_current_goal}")
 
     dist_to_current_goal_FF = np.linalg.norm(FF_finger_pos - FF_current_goal)
     dist_to_current_goal_MF = np.linalg.norm(MF_finger_pos - MF_current_goal)
@@ -241,43 +284,47 @@ class HandGymEnvOrchestrator(gymnasium.Env):
     dist_from_current_goal_to_main_goal_RF =  np.linalg.norm(RF_current_goal - self._goals["RF"])
     dist_from_current_goal_to_main_goal_TH =  np.linalg.norm(TH_current_goal - self._goals["TH"])
 
-
-    print(f"dist_from_current_goal_to_main_goal_FF::{dist_from_current_goal_to_main_goal_FF}")
-    print(f"dist_from_current_goal_to_main_goal_MF::{dist_from_current_goal_to_main_goal_MF}")
-    print(f"dist_from_current_goal_to_main_goal_RF::{dist_from_current_goal_to_main_goal_RF}")
-    print(f"dist_from_current_goal_to_main_goal_TH::{dist_from_current_goal_to_main_goal_TH}")
-
-
     state_dict = {
       # hand_goals: Main goal the hand wants to achieve
-      "hand_goals": self._goals["FF"] + self._goals["MF"] +self._goals["RF"] + self._goals["TH"],
+      "hand_goals": self._goals["FF"] + self._goals["MF"] +self._goals["RF"] + self._goals["TH"], #12
       "current_goal":np.concatenate((FF_current_goal, 
                                      MF_current_goal,
                                      RF_current_goal,
-                                     TH_current_goal)).tolist(),
+                                     TH_current_goal)).tolist(), #12
       "fingertip_pos":np.concatenate((FF_finger_pos, 
                                       MF_finger_pos, 
                                       RF_finger_pos, 
-                                      TH_finger_pos)).tolist(),
+                                      TH_finger_pos)).tolist(), #12
       "dist_from_current_goal_to_main_goal":[dist_from_current_goal_to_main_goal_FF,
-                                                            dist_from_current_goal_to_main_goal_MF, 
-                                                            dist_from_current_goal_to_main_goal_RF,
-                                                            dist_from_current_goal_to_main_goal_TH],
+                                             dist_from_current_goal_to_main_goal_MF,
+                                             dist_from_current_goal_to_main_goal_RF,
+                                             dist_from_current_goal_to_main_goal_TH], #4
       "dist_from_fingertip_to_current_goal":[dist_to_current_goal_FF,
-                                                            dist_to_current_goal_MF,
-                                                            dist_to_current_goal_RF,
-                                                            dist_to_current_goal_TH],
+                                             dist_to_current_goal_MF,
+                                             dist_to_current_goal_RF,
+                                             dist_to_current_goal_TH], #4
       "dist_to_main_goal":[dist_to_main_goal_FF,
-                                          dist_to_main_goal_MF, 
-                                          dist_to_main_goal_RF,
-                                          dist_to_main_goal_TH]
+                           dist_to_main_goal_MF,
+                           dist_to_main_goal_RF,
+                           dist_to_main_goal_TH] #4
     }
 
-    for key, value in state_dict.items():
-      print(f"{key}::{type(value)}\n{value}")
+    # TODO: add history of previous goals chosen by the agent
 
-    state = state_dict["hand_goals"] + state_dict["current_goal"] + state_dict["fingertip_pos"] + state_dict["dist_from_current_goal_to_main_goal"] + state_dict["dist_from_fingertip_to_current_goal"]
- 
+    for key, value in state_dict.items():
+      print("\n")
+      print(f"{key}::{type(value)}\n{value}")
+      print("\n")
+
+
+    state = state_dict["hand_goals"] \
+      + state_dict["current_goal"] \
+      + state_dict["fingertip_pos"] \
+      + state_dict["dist_from_current_goal_to_main_goal"] \
+      + state_dict["dist_from_fingertip_to_current_goal"] \
+      + history["last_last_act"] \
+      + history["last_act"]
+
 
     return state, state_dict
     # Obs dim: (combined state_dict dim) * num_env type: numpy

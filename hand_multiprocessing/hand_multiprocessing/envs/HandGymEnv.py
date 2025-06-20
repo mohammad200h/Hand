@@ -108,6 +108,7 @@ class FingersAction(FingersActionBase):
 
   def get_current_state_of_joints(self):
     return self.controller_obj.getObservation()
+
 class ThumbAction(ThumbActionBase):
   def __init__(self,action_mode,symitric_action,controller_obj):
     super().__init__(action_mode,symitric_action,controller_obj)
@@ -593,12 +594,8 @@ class HandGymEnv(gymnasium.Env):
         if  goal_is_achived["TH"]:
           self.random_start_obj["thumb"].increment_success()  
           
-        
         return True
-
-      
         #################################################
-      
       return False 
     
     ########utility function#########
@@ -610,12 +607,11 @@ class HandGymEnv(gymnasium.Env):
       # TODO: after wrting controller finish this
       self.controller = Hand(self._p,self.models["robot"])
       ####### load goals #########
-      goal_path = resource_filename(__name__,"/goal/goal.sdf")
-      previous_goal_path = resource_filename(__name__,"/goal/previous_goal .sdf")
       for finger_name in ["FF","MF","RF","TH"]:
+        goal_path = resource_filename(__name__,f"/goal/goal_{finger_name}.sdf")
+        previous_goal_path = resource_filename(__name__,f"/goal/pre_goal_{finger_name}.sdf")
         self.goals["ids"]["current"][finger_name] = self._p.loadSDF(goal_path)[0]
         self.goals["ids"]["previous"][finger_name] = self._p.loadSDF(previous_goal_path)[0]
-
 
     def change_goal_location(self,finger_name,previous=False):
      
@@ -632,9 +628,9 @@ class HandGymEnv(gymnasium.Env):
         self._p.resetBasePositionAndOrientation(goalId, goal_loc,quaternion_angle)  
 
     def set_goal_location(self, goals:np.array):
-      # print(f"HandGymEnv::set_goal_location::type::{type(goals)}")
-      # print(f"HandGymEnv::set_goal_location::shape::{goals.shape}")
-      # print(f"HandGymEnv::set_goal_location::goals::{goals}")
+      print(f"HandGymEnv::set_goal_location::type::{type(goals)}")
+      print(f"HandGymEnv::set_goal_location::shape::{goals.shape}")
+      print(f"HandGymEnv::set_goal_location::goals::{goals}")
       goals_dic = {
         "FF":goals[:3],
         "MF":goals[3:6],

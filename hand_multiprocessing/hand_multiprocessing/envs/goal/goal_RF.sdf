@@ -19,16 +19,16 @@
 
       
             <visual name="visual">
-                <!-- <pose>0 0.25 0.1 0 0 0</pose> -->
+                <!-- RF -> YELLOW  -->
                 <geometry>
                     <sphere>
                         <radius>0.01</radius>
                     </sphere>
                 </geometry>  
                 <material> 
-                    <ambient> 0.6 0.1 0 1</ambient>
-                    <diffuse> 0.6 0.1 0 1</diffuse>
-                    <specular>0.6 0.1 0 1</specular>
+                    <ambient> 0.988 0.976 0.22 1</ambient>
+                    <diffuse> 0.988 0.976 0.22 1</diffuse>
+                    <specular>0.988 0.976 0.22 1</specular>
                     <emissive>0 0 0 0</emissive> 
                  
                 </material> 
